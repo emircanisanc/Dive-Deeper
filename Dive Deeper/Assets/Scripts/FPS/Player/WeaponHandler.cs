@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using System.Linq;
 
 public class WeaponHandler : Singleton<WeaponHandler>
 {
@@ -50,7 +51,7 @@ public class WeaponHandler : Singleton<WeaponHandler>
             }
         }
 
-        if (Input.GetAxis("Reload") > 0 && weapon.CanFire)
+        if (Input.GetAxis("Reload") > 0 && weapon.CanReload)
             weapon.StartReload();
     }
 
@@ -68,6 +69,15 @@ public class WeaponHandler : Singleton<WeaponHandler>
         if (weapon.IsShooting)
         {
             weapon.HandleReleaseFire();
+        }
+    }
+
+    public void AddBullet(BulletType bulletType, int bulletAmount)
+    {
+        var filteredWeapons = weapons.Where(x => x.BulletType == bulletType).ToList();
+        if (filteredWeapons.Count > 0)
+        {
+            filteredWeapons[0].AddBullet(bulletAmount);
         }
     }
 }

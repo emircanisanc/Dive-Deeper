@@ -10,9 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 636970022231831796}
   - component: {fileID: 636970022231831797}
-  - component: {fileID: 636970022231831798}
-  - component: {fileID: 636970022231831799}
   - component: {fileID: -3696572697207705381}
+  - component: {fileID: 5392602808385998318}
   m_Layer: 9
   m_Name: Fries
   m_TagString: Untagged
@@ -49,32 +48,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.8
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &636970022231831798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 636970022231831802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bf62c1698726b0479fe3b5f8d88721c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifeTime: 12
---- !u!114 &636970022231831799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 636970022231831802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a106aaae4737924b9a858deba1def20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fruitData: {fileID: 11400000, guid: a3e907a01fc15cb4cb7bb9dab965259d, type: 2}
 --- !u!54 &-3696572697207705381
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -91,6 +64,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5392602808385998318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636970022231831802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cfb2fa77f69544449e851567a6517e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messageOnCollected: 'Collected: Laser Ammo'
+  bulletType: 0
+  bulletAmount: 50
 --- !u!1 &1199816257279111868
 GameObject:
   m_ObjectHideFlags: 0

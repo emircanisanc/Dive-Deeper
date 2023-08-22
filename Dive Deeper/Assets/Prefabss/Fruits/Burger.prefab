@@ -59,9 +59,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6506620174839391757}
   - component: {fileID: 6506620174839391756}
-  - component: {fileID: 6506620174839391759}
-  - component: {fileID: 6506620174839391758}
   - component: {fileID: 7056641435486259766}
+  - component: {fileID: -3532039357210391252}
   m_Layer: 9
   m_Name: Burger
   m_TagString: Untagged
@@ -98,32 +97,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.8
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6506620174839391759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6506620174839391747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bf62c1698726b0479fe3b5f8d88721c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifeTime: 12
---- !u!114 &6506620174839391758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6506620174839391747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a106aaae4737924b9a858deba1def20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fruitData: {fileID: 11400000, guid: 0402932530580db47afc033e2ab20574, type: 2}
 --- !u!54 &7056641435486259766
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -140,6 +113,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-3532039357210391252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6506620174839391747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54187526e79eaa644a5a8419322f7bde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messageOnCollected: 'Collected: Medkit'
+  healAmount: 20
 --- !u!1 &8929714738740135561
 GameObject:
   m_ObjectHideFlags: 0

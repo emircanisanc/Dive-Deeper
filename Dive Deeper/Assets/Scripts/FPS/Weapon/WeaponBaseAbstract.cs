@@ -1,6 +1,13 @@
 using UnityEngine;
 using System;
 
+public enum BulletType
+{
+    Laser,
+    Shotgun
+}
+
+
 /// <summary>
 /// Abstract base class for weapons in the game.
 /// </summary>
@@ -9,11 +16,13 @@ public abstract class WeaponBaseAbstract : MonoBehaviour
     [Header("Ammo Settings")]
     [SerializeField] protected int maxAmmo = 200; // Maximum ammo capacity.
     [SerializeField] protected int clipSize = 25; // Maximum clip capacity.
-    public int MaxAmmo => maxAmmo; 
+    [SerializeField] protected BulletType bulletType;
+    public int MaxAmmo => maxAmmo;
     protected int currentAmmo; // Current ammo count.
     public int CurrentAmmo => currentAmmo;
     protected int totalAmmo; // Current total ammo count.
     public int TotalAmmo => totalAmmo;
+    public BulletType BulletType => bulletType;
     public Action<int> OnCurrentAmmoReduced;
     public Action<int> OnTotalAmmoReduced;
 
@@ -29,7 +38,9 @@ public abstract class WeaponBaseAbstract : MonoBehaviour
     public bool IsShooting => isShooting;
 
     protected bool canFire; // Indicates if the weapon can fire.
-    public bool CanFire => canFire && currentAmmo > 0;
+    public bool CanFire => canFire && currentAmmo > 0 && !isReloading;
+    public bool CanReload => !isReloading && currentAmmo != clipSize && totalAmmo != 0;
+    protected bool isReloading;
 
     private bool isInitialized;
 
@@ -77,7 +88,15 @@ public abstract class WeaponBaseAbstract : MonoBehaviour
     {
         currentAmmo = clipSize;
         totalAmmo = maxAmmo;
+        OnTotalAmmoReduced?.Invoke(totalAmmo);
+        OnCurrentAmmoReduced?.Invoke(currentAmmo);
         canFire = true;
+    }
+
+    public void AddBullet(int bulletAmount)
+    {
+        totalAmmo = Mathf.Min(maxAmmo, totalAmmo + bulletAmount);
+        OnTotalAmmoReduced?.Invoke(totalAmmo);
     }
 
 }

@@ -114,6 +114,7 @@ public class GunBase : WeaponBaseAbstract, IBackfireable
 
     public override void StartReload()
     {
+        isReloading = true;
         StopFire();
         canFire = false;
         StartCoroutine(ReloadCoroutine());
@@ -124,9 +125,13 @@ public class GunBase : WeaponBaseAbstract, IBackfireable
         Debug.Log("reloading");
         yield return new WaitForSeconds(maxReloadTime);
         Debug.Log("reload ended");
+        isReloading = false;
         canFire = true;
-        currentAmmo = clipSize;
-        totalAmmo -= clipSize;
+        totalAmmo += currentAmmo;
+        currentAmmo = 0;
+        int bulletToAdd = Mathf.Min(clipSize, totalAmmo);
+        currentAmmo = bulletToAdd;
+        totalAmmo -= bulletToAdd;
         OnTotalAmmoReduced?.Invoke(totalAmmo);
         OnCurrentAmmoReduced?.Invoke(currentAmmo);
     }
@@ -155,7 +160,7 @@ public class GunBase : WeaponBaseAbstract, IBackfireable
     protected Vector3 CalculateBulletTargetPos(Transform cam)
     {
         Vector3 targetPos = cam.position + cam.forward * 10;
-        var hits = Physics.RaycastAll(cam.position, cam.forward);
+        var hits = Physics.RaycastAll(cam.position, cam.forward, range, targetLayer);
         if (hits.Length > 0)
             targetPos = hits[0].point;
         return targetPos;
@@ -163,7 +168,7 @@ public class GunBase : WeaponBaseAbstract, IBackfireable
 
     private IEnumerator DisableTrailAfterDelay(Vector3 end)
     {
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.03f);
 
         trailRenderer.enabled = false; // disable the trail renderer
     }

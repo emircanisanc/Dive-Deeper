@@ -33,5 +33,10 @@ public class PlayerHealth : Singleton<PlayerHealth>, IDamageable
         OnPlayerDied?.Invoke();
 
     }
+
+    public void Heal(float healAmount)
+    {
+        health.Value = Mathf.Min(maxHealth.Value, healAmount + health.Value);
+    }
 }
 
