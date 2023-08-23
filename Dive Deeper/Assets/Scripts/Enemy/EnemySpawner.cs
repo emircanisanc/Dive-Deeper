@@ -48,8 +48,11 @@ public class EnemySpawner : Singleton<EnemySpawner>
     {
         Vector3 playerPos = PlayerHealth.Instance.transform.position;
         GameObject randomPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
-        Vector3 spawnPosition = enemySpawnPoints.OrderBy(
-            spawnPoint => Vector3.Distance(spawnPoint.position, playerPos)).ToArray()[enemySpawnPoints.Count - 1].position;
+        Vector3 spawnPosition = enemySpawnPoints[Random.Range(0, enemySpawnPoints.Count)].position; ;
+        while (Vector3.Distance(spawnPosition, playerPos) < 10f)
+        {
+            spawnPosition = enemySpawnPoints[Random.Range(0, enemySpawnPoints.Count)].position;
+        }
         EnemyBaseAbstract enemy = Instantiate(randomPrefab, spawnPosition, Quaternion.identity).GetComponent<EnemyBaseAbstract>();
         enemy.SetPlayer();
         liveEnemyCount++;
@@ -58,7 +61,6 @@ public class EnemySpawner : Singleton<EnemySpawner>
     public void OnEnemyDied()
     {
         liveEnemyCount--;
-
         // Check if the timer has ended and there are no live enemies left
         if (totalTime <= 0 && liveEnemyCount <= 0)
         {
