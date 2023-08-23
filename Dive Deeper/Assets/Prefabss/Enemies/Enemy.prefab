@@ -872,10 +872,7 @@ GameObject:
   - component: {fileID: 7705623911787090528}
   - component: {fileID: 7705623911787090529}
   - component: {fileID: 7705623911787090559}
-  - component: {fileID: 7705623911787090557}
-  - component: {fileID: 7705623911787090556}
   - component: {fileID: 3443702328485859647}
-  - component: {fileID: 7807098035979750748}
   - component: {fileID: 6601087596877161407}
   m_Layer: 7
   m_Name: Enemy
@@ -937,34 +934,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &7705623911787090557
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7705623911787090531}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a1a9bca9f554d549815b00173f0342d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthBase: {fileID: 7705623911787090556}
-  audioEventOnHitDamage: {fileID: 11400000, guid: 10510aa4791fbd54eb8933dfff8376be,
-    type: 2}
---- !u!114 &7705623911787090556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7705623911787090531}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11822495ed0199847be6be13453f9c32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: {fileID: 11400000, guid: 374567e237486fb458bbce2bedca3937, type: 2}
 --- !u!114 &3443702328485859647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -977,28 +946,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3921f58b4b4cb834d9c39786b12927fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 150
   attackRange: 2
   attackRate: 2
   attackDamage: 10
   playerLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 256
   attackOriginTransform: {fileID: 1257816011}
   attackAnimCount: 1
-  itemDropHandler: {fileID: 7807098035979750748}
---- !u!114 &7807098035979750748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7705623911787090531}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cfc1b67cc884864783cec97700c5513, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemDropData: {fileID: 11400000, guid: b743ebd0130e1304e94c8c5dca4dda44, type: 2}
 --- !u!54 &6601087596877161407
 Rigidbody:
   m_ObjectHideFlags: 0
