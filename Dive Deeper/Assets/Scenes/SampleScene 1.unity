@@ -556,6 +556,53 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1187111697}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &554286954
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 554286955}
+  - component: {fileID: 554286956}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &554286955
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554286954}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 622136179}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &554286956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554286954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f8191161ea1220449345209be4a1598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grenadeExplosions: {fileID: 11400000, guid: a0f4787a4f2c22a4da4fde8a9e863dfa, type: 2}
+  pickupSounds: {fileID: 11400000, guid: e6650c2b997ab1140b850de4d56bdff3, type: 2}
+  creatureSounds: {fileID: 0}
 --- !u!1001 &582901437
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -656,6 +703,7 @@ Transform:
   - {fileID: 1449468836}
   - {fileID: 1112336491}
   - {fileID: 338619404}
+  - {fileID: 554286955}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

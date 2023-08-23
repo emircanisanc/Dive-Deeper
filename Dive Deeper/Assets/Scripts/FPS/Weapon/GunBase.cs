@@ -2,8 +2,12 @@ using System.Collections;
 using UnityEngine;
 using System.Linq;
 
+[RequireComponent(typeof(AudioSource))]
 public class GunBase : WeaponBaseAbstract, IBackfireable
 {
+    [SerializeField] protected AudioClipsSO fireClips;
+    [SerializeField] protected AudioClipsSO reloadClips;
+    protected AudioSource audioSource;
     [Header("Visuals")]
     // [SerializeField] private TrailRenderer trailRenderer;
     [SerializeField] private Transform firePoint;
@@ -27,6 +31,14 @@ public class GunBase : WeaponBaseAbstract, IBackfireable
     protected float sprayAmount;
     public float SprayAmount { get => sprayAmount; set { sprayAmount = value * sprayMultiplier; } }
 
+
+    protected override void Start()
+    {
+        base.Start();
+        audioSource = GetComponent<AudioSource>();
+        audioSource.volume = 0.5f;
+        audioSource.playOnAwake = false;
+    }
 
     public override void HandleSecondFire(Transform cam)
     {
@@ -67,6 +79,7 @@ public class GunBase : WeaponBaseAbstract, IBackfireable
 
     protected void FireBullet(Vector3 start, Vector3 dir)
     {
+        audioSource.PlayOneShot(fireClips.RandomAudioClip);
         HandleHit(Physics.RaycastAll(start, dir, range, targetLayer));
         ReduceAmmo();
         OnCurrentAmmoReduced?.Invoke(currentAmmo);
@@ -130,6 +143,7 @@ public class GunBase : WeaponBaseAbstract, IBackfireable
     IEnumerator ReloadCoroutine()
     {
         reloadTime = maxReloadTime;
+        audioSource.PlayOneShot(reloadClips.RandomAudioClip);
         OnReloadTimeChanged?.Invoke(reloadTime);
         while (reloadTime > 0)
         {

@@ -9,6 +9,7 @@ public class CollectableBase : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            AudioSource.PlayClipAtPoint(AudioManager.Instance.PickupSound, transform.position);
             Message.ShowMessageInstance(messageOnCollected);
             Collect(other);
         }    

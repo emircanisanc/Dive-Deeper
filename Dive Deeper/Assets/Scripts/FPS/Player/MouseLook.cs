@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class MouseLook : MonoBehaviour
@@ -5,13 +6,13 @@ public class MouseLook : MonoBehaviour
     [SerializeField] private Transform playerBody;
     [SerializeField] private float mouseSensitivity = 100f;
 
-    public float WantedCameraXRotation{get; set;}
-    public float WantedYRotation{get; set;}
+    public float WantedCameraXRotation { get; set; }
+    public float WantedYRotation { get; set; }
 
 
     private float currentCameraXRotation;
     private float currentYRotation;
-    
+
     private float rotationYVelocity;
     [SerializeField] private float yRotationSpeed;
     private float cameraXVelocity;
@@ -56,8 +57,17 @@ public class MouseLook : MonoBehaviour
         currentYRotation = Mathf.SmoothDamp(currentYRotation, WantedYRotation, ref rotationYVelocity, yRotationSpeed);
         currentCameraXRotation = Mathf.SmoothDamp(currentCameraXRotation, WantedCameraXRotation, ref cameraXVelocity, xCameraSpeed);
 
-        playerBody.rotation = Quaternion.Euler(0, currentYRotation, 0);
-        transform.localRotation = Quaternion.Euler(currentCameraXRotation, 0, 0);
+        try
+        {
+            playerBody.rotation = Quaternion.Euler(0, currentYRotation, 0);
+            transform.localRotation = Quaternion.Euler(currentCameraXRotation, 0, 0);
+        }
+        catch (Exception ex)
+        {
+            // DO NOT EDIT
+        }
+
+
     }
 
 }

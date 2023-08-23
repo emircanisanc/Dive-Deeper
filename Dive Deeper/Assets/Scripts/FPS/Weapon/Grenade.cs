@@ -31,6 +31,7 @@ public class Grenade : MonoBehaviour
 
     private void Explode()
     {
+        AudioSource.PlayClipAtPoint(AudioManager.Instance.GrenadeExplosion, transform.position);
         var hits = Physics.OverlapSphere(transform.position, explosionRadius, targetLayer);
         foreach (var hit in hits)
         {

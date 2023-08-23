@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LaserGun : GunBase
 {
+    [SerializeField] protected AudioClipsSO fireGrenadeClips;
     [SerializeField] GameObject grenadePrefab;
     [SerializeField] Transform grenadePoint;
 
@@ -29,6 +30,7 @@ public class LaserGun : GunBase
                 canFireGrenade = false;
                 nextGrenadeTime = Time.time + 0.3f;
                 grenadeAmount--;
+                audioSource.PlayOneShot(fireGrenadeClips.RandomAudioClip);
                 Instantiate(grenadePrefab, grenadePoint.position, cam.rotation);
             }
         }

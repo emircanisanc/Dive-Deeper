@@ -16,6 +16,7 @@ public class OpeningSceneManager : MonoBehaviour
     public GameObject openingParent;
     public float endDuration = 3f;
     public float durationBeforeDialog = 3f;
+    public AudioClip endingClip;
 
     void Start()
     {
@@ -40,6 +41,8 @@ public class OpeningSceneManager : MonoBehaviour
             yield return new WaitForSeconds(dialog.duration);
         }
         reverseEyes.SetActive(true);
+        yield return new WaitForSeconds(1.4f);
+        AudioSource.PlayClipAtPoint(endingClip, transform.position);
         yield return new WaitForSeconds(endDuration);
         SceneManager.LoadScene("Level 1");
     }

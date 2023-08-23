@@ -4178,8 +4178,9 @@ MonoBehaviour:
   textParent: {fileID: 1272008570}
   reverseEyes: {fileID: 973613418}
   openingParent: {fileID: 872357055}
-  endDuration: 3
+  endDuration: 2.5
   durationBeforeDialog: 3
+  endingClip: {fileID: 8300000, guid: 1e01a3eff9609af4a91cea332a46838e, type: 3}
 --- !u!4 &847844292
 Transform:
   m_ObjectHideFlags: 0

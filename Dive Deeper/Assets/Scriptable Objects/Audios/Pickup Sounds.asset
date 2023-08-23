@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52f82995e7846614db3d2c2e9d03969b, type: 3}
+  m_Name: Pickup Sounds
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: 2dfa86b34e1ee444587f27ba295aa46b, type: 3}
+  - {fileID: 8300000, guid: 8ad8e1b7041dd394aa92aad52c8636e5, type: 3}
+  - {fileID: 8300000, guid: 79f48574cbf0be842b5c7133147f3f9f, type: 3}
+  - {fileID: 8300000, guid: 425b173908d24124facd5a0b17af5f52, type: 3}
+  - {fileID: 8300000, guid: 63b52e0320e1cd54788f1e7495d101c1, type: 3}
+  - {fileID: 8300000, guid: ac1cb04ab9cfeb74c8de45aa81c06351, type: 3}
