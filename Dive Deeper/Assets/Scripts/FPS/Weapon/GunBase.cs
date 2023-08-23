@@ -5,12 +5,8 @@ using System.Linq;
 public class GunBase : WeaponBaseAbstract, IBackfireable
 {
     [Header("Visuals")]
-    [SerializeField] private TrailRenderer trailRenderer;
+    // [SerializeField] private TrailRenderer trailRenderer;
     [SerializeField] private Transform firePoint;
-
-    [Header("Reload Settings")]
-    [SerializeField] private float maxReloadTime = 2;
-    protected float nextAttackTime;
     
     [Header("Fire Settings")]
     [SerializeField] protected float fireRate = 0.1f;
@@ -31,6 +27,16 @@ public class GunBase : WeaponBaseAbstract, IBackfireable
     protected float sprayAmount;
     public float SprayAmount { get => sprayAmount; set { sprayAmount = value * sprayMultiplier; } }
 
+
+    public override void HandleSecondFire(Transform cam)
+    {
+
+    }
+
+    public override void HandleReleaseSecondFire()
+    {
+
+    }
 
 
     public override bool HandleFire(Transform cam)
@@ -90,7 +96,7 @@ public class GunBase : WeaponBaseAbstract, IBackfireable
     protected override void ReduceAmmo()
     {
         currentAmmo--;
-        if (currentAmmo == 0)
+        if (currentAmmo == 0 && CanReload)
             StartReload();
     }
 
@@ -109,7 +115,8 @@ public class GunBase : WeaponBaseAbstract, IBackfireable
     protected override void OnClipFinished()
     {
         StopFire();
-        StartReload();
+        if (CanReload)
+            StartReload();
     }
 
     public override void StartReload()
@@ -122,9 +129,14 @@ public class GunBase : WeaponBaseAbstract, IBackfireable
 
     IEnumerator ReloadCoroutine()
     {
-        Debug.Log("reloading");
-        yield return new WaitForSeconds(maxReloadTime);
-        Debug.Log("reload ended");
+        reloadTime = maxReloadTime;
+        OnReloadTimeChanged?.Invoke(reloadTime);
+        while (reloadTime > 0)
+        {
+            yield return new WaitForSeconds(0f);
+            reloadTime -= Time.deltaTime;
+            OnReloadTimeChanged?.Invoke(reloadTime);
+        }
         isReloading = false;
         canFire = true;
         totalAmmo += currentAmmo;
@@ -146,15 +158,16 @@ public class GunBase : WeaponBaseAbstract, IBackfireable
     {
         float min = UnityEngine.Random.Range(0.1f, 0.4f);
         Vector3 start = firePoint.position + dir * min;
-        trailRenderer.transform.position = start;
+        /* trailRenderer.transform.position = start;
         trailRenderer.Clear(); // clear existing positions from the trail renderer
-        trailRenderer.enabled = true; // enable the trail renderer
+        trailRenderer.enabled = true; // enable the trail renderer */
 
         Vector3 end = CalculateBulletTargetPos(Camera.main.transform);
-        trailRenderer.AddPosition(start);
-        trailRenderer.AddPosition(end);
+        /* trailRenderer.AddPosition(start);
+        trailRenderer.AddPosition(end); */
 
-        StartCoroutine(DisableTrailAfterDelay(end)); // disable the trail renderer after a delay
+        // StartCoroutine(DisableTrailAfterDelay(end)); // disable the trail renderer after a delay
+        TrailManager.Instance.CreateTrail(start, end, Color.blue);
     }
 
     protected Vector3 CalculateBulletTargetPos(Transform cam)
@@ -170,7 +183,7 @@ public class GunBase : WeaponBaseAbstract, IBackfireable
     {
         yield return new WaitForSeconds(0.03f);
 
-        trailRenderer.enabled = false; // disable the trail renderer
+        // trailRenderer.enabled = false; // disable the trail renderer
     }
 
 }

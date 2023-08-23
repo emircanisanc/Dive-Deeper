@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7942778101533098158}
   - component: {fileID: 7942778101533098159}
-  - component: {fileID: -100536922636689723}
+  - component: {fileID: 3036952163276564560}
   m_Layer: 0
   m_Name: GunTrail
   m_TagString: Untagged
@@ -54,7 +54,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7f272fd3ecf79cb409ec6a6e171884ad, type: 2}
+  - {fileID: 2100000, guid: 0a494d9ab8e4403429096deded7749b2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -78,13 +78,13 @@ TrailRenderer:
   m_Time: 0.1
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 0.1
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.04244995
+        value: 0.02
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -141,7 +141,7 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!114 &-100536922636689723
+--- !u!114 &3036952163276564560
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7942778101533098156}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4db261c0a283284ca25581fb929dd0e, type: 3}
+  m_Script: {fileID: 11500000, guid: 1bf62c1698726b0479fe3b5f8d88721c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 0.1
+  lifeTime: 0.05

@@ -39,7 +39,6 @@ public abstract class EnemyBaseAbstract : MonoBehaviour, IDamageable, IHitable
         currentHealth = maxHealth;
         coll.enabled = true;
         animator.SetFloat("MoveSpeed", moveSpeed);
-        StopMove();
         agent.speed = moveSpeed;
         if (player == null)
         {
@@ -119,7 +118,7 @@ public abstract class EnemyBaseAbstract : MonoBehaviour, IDamageable, IHitable
     }
     private void Disappear()
     {
-        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
     private void FaceTarget()
     {
@@ -137,6 +136,7 @@ public abstract class EnemyBaseAbstract : MonoBehaviour, IDamageable, IHitable
 
         if (currentHealth <= 0)
         {
+            EnemySpawner.Instance.OnEnemyDied();
             Die();
         }
     }

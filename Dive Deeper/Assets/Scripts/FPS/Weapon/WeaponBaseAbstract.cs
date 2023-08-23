@@ -13,6 +13,11 @@ public enum BulletType
 /// </summary>
 public abstract class WeaponBaseAbstract : MonoBehaviour
 {
+    [Header("Reload Settings")]
+    [SerializeField] protected float maxReloadTime = 2;
+    protected float reloadTime;
+    protected float nextAttackTime;
+    public float MaxReloadTime => maxReloadTime;
     [Header("Ammo Settings")]
     [SerializeField] protected int maxAmmo = 200; // Maximum ammo capacity.
     [SerializeField] protected int clipSize = 25; // Maximum clip capacity.
@@ -25,6 +30,7 @@ public abstract class WeaponBaseAbstract : MonoBehaviour
     public BulletType BulletType => bulletType;
     public Action<int> OnCurrentAmmoReduced;
     public Action<int> OnTotalAmmoReduced;
+    public Action<float> OnReloadTimeChanged;
 
     [SerializeField] protected float damage = 5; // Damage per shot.
     [SerializeField] protected LayerMask targetLayer; // Layer mask for targeting.
@@ -44,6 +50,14 @@ public abstract class WeaponBaseAbstract : MonoBehaviour
 
     private bool isInitialized;
 
+    private void OnDisable() {
+        if (isReloading)
+        {
+            isReloading = false;
+            OnReloadTimeChanged?.Invoke(0);
+            canFire = true;
+        }
+    }
 
     protected virtual void Start()
     {
@@ -53,6 +67,10 @@ public abstract class WeaponBaseAbstract : MonoBehaviour
         isInitialized = true;
         InitWeapon();
     }
+
+    public abstract void HandleSecondFire(Transform cam);
+
+    public abstract void HandleReleaseSecondFire();
 
     /// <summary>
     /// Handles firing the weapon.
@@ -93,7 +111,7 @@ public abstract class WeaponBaseAbstract : MonoBehaviour
         canFire = true;
     }
 
-    public void AddBullet(int bulletAmount)
+    public virtual void AddBullet(int bulletAmount)
     {
         totalAmmo = Mathf.Min(maxAmmo, totalAmmo + bulletAmount);
         OnTotalAmmoReduced?.Invoke(totalAmmo);

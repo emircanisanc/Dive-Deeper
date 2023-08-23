@@ -24,17 +24,21 @@ public class WeaponHandler : Singleton<WeaponHandler>
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.U))
+        if (Input.GetAxis("Scrool") < 0)
         {
-            if (Weapon == weapons[0])
+            if (Weapon != weapons[0])
             {
-                SwitchWeapon(weapons[1]);
-            }
-            else
-            {
-                SwitchWeapon(weapons[0]);
+                SwitchWeapon(weapons[0]);   
             }
         }
+        else if (Input.GetAxis("Scrool") > 0)
+        {
+            if (Weapon != weapons[1])
+            {
+                SwitchWeapon(weapons[1]);   
+            }
+        }
+
         if (Input.GetAxis("Fire1") > 0)
         {
             if (weapon.CanFire)
@@ -49,7 +53,17 @@ public class WeaponHandler : Singleton<WeaponHandler>
             {
                 weapon.HandleReleaseFire();
             }
+
+            if (Input.GetMouseButtonDown(1))
+            {
+                weapon.HandleSecondFire(camTransform);
+            }
+            if (Input.GetMouseButtonUp(1))
+            {
+                weapon.HandleReleaseSecondFire();
+            }
         }
+
 
         if (Input.GetAxis("Reload") > 0 && weapon.CanReload)
             weapon.StartReload();

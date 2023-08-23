@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class Pistol : GunBase
 {
+    public override void HandleSecondFire(Transform cam)
+    {
+
+    }
+
+    public override void HandleReleaseSecondFire()
+    {
+
+    }
+
+    
     public override bool HandleFire(Transform cam)
     {
         if (!canFire)

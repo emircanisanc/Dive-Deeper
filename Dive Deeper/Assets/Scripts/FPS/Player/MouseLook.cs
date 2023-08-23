@@ -8,7 +8,6 @@ public class MouseLook : MonoBehaviour
     public float WantedCameraXRotation{get; set;}
     public float WantedYRotation{get; set;}
 
-    /* float xRotation = 0f; */
 
     private float currentCameraXRotation;
     private float currentYRotation;
@@ -17,6 +16,15 @@ public class MouseLook : MonoBehaviour
     [SerializeField] private float yRotationSpeed;
     private float cameraXVelocity;
     [SerializeField] private float xCameraSpeed;
+
+    void Awake()
+    {
+        currentYRotation = playerBody.eulerAngles.y;
+        WantedYRotation = currentYRotation;
+
+        currentCameraXRotation = transform.eulerAngles.x;
+        WantedCameraXRotation = currentCameraXRotation;
+    }
 
     void Start()
     {
@@ -34,6 +42,7 @@ public class MouseLook : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerBody.Rotate(Vector3.up * mouseX); */
+
     }
 
     private void MouseControl()

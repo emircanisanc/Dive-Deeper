@@ -10,6 +10,8 @@ public class InGameUI : MonoBehaviour
     [SerializeField] Float maxHealth;
     [SerializeField] TextMeshProUGUI bulletTMP;
     [SerializeField] TextMeshProUGUI maxBulletTMP;
+    [SerializeField] GameObject reloadBarParent;
+    [SerializeField] Image reloadBar;
     [SerializeField] Image healthBar;
     [SerializeField] TextMeshProUGUI healthTMP;
     [SerializeField] TextMeshProUGUI maxHealthTMP;
@@ -21,6 +23,7 @@ public class InGameUI : MonoBehaviour
         lastWeapon = WeaponHandler.Instance.Weapon;
         lastWeapon.OnCurrentAmmoReduced += UpdateBullet;
         lastWeapon.OnTotalAmmoReduced += UpdateMaxBullet;
+        lastWeapon.OnReloadTimeChanged += UpdateReloadBar;
         UpdateBullet(lastWeapon.CurrentAmmo);
         UpdateMaxBullet(lastWeapon.TotalAmmo);
 
@@ -36,6 +39,7 @@ public class InGameUI : MonoBehaviour
         {
             lastWeapon.OnCurrentAmmoReduced -= UpdateBullet;
             lastWeapon.OnTotalAmmoReduced -= UpdateMaxBullet;
+            lastWeapon.OnReloadTimeChanged -= UpdateReloadBar;
         }
 
         if (newWeapon != null)
@@ -43,6 +47,7 @@ public class InGameUI : MonoBehaviour
             lastWeapon = newWeapon;
             lastWeapon.OnCurrentAmmoReduced += UpdateBullet;
             lastWeapon.OnTotalAmmoReduced += UpdateMaxBullet;
+            lastWeapon.OnReloadTimeChanged += UpdateReloadBar;
             UpdateBullet(lastWeapon.CurrentAmmo);
             UpdateMaxBullet(lastWeapon.TotalAmmo);
         }
@@ -68,6 +73,7 @@ public class InGameUI : MonoBehaviour
         {
             lastWeapon.OnCurrentAmmoReduced -= UpdateBullet;
             lastWeapon.OnTotalAmmoReduced -= UpdateMaxBullet;
+            lastWeapon.OnReloadTimeChanged -= UpdateReloadBar;
         }
         health.OnValueChanged.RemoveListener(UpdateHealth);
     }
@@ -91,6 +97,19 @@ public class InGameUI : MonoBehaviour
     {
         healthBar.fillAmount = value / maxHealth.Value;
         healthTMP.SetText(value.ToString());
+    }
+
+    private void UpdateReloadBar(float value)
+    {
+        if (value > 0)
+        {
+            reloadBarParent.SetActive(true);
+            reloadBar.fillAmount =  (lastWeapon.MaxReloadTime - value) / lastWeapon.MaxReloadTime;
+        }
+        else
+        {
+            reloadBarParent.SetActive(false);
+        }
     }
 
 }

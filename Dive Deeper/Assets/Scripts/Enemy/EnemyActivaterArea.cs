@@ -34,7 +34,8 @@ public class EnemyActivaterArea : MonoBehaviour
             isDone = true;
             foreach (EnemyBaseAbstract enemy in enemies)
             {
-                enemy.SetPlayer();
+                if (enemy)
+                    enemy.SetPlayer();
             }
             Destroy(gameObject);
         }    
