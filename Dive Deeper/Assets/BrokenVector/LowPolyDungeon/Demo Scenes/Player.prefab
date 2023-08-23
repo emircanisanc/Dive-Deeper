@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8358542452837294462}
   - component: {fileID: 8358542452837294463}
   - component: {fileID: 8358542452837294459}
-  - component: {fileID: 8358542452837294460}
   - component: {fileID: 1562375479}
   m_Layer: 0
   m_Name: Player
@@ -65,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 239378781582670930, guid: 3cfec910184c84d41929446af45fda1b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -105,23 +104,6 @@ CharacterController:
   m_SkinWidth: 0.1
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8358542452837294460
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8358542452837294435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e478c0cc6d326d0428f3ef40bdce5aca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: {fileID: 8358542452837294459}
-  baseSpeed: 3
-  gravity: -30
-  jumpHeight: 1.2
-  sprintSpeed: 5
 --- !u!114 &1562375479
 MonoBehaviour:
   m_ObjectHideFlags: 0
