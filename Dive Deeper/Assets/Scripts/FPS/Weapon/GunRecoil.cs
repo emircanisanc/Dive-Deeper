@@ -58,7 +58,8 @@ public class GunRecoil : MonoBehaviour
     }
     private void ApplyRecoil(Vector2 movement)
     {
-        gun.SprayAmount = movement.magnitude * movementSprayMultiplier;
+        if (gun)
+            gun.SprayAmount = movement.magnitude * movementSprayMultiplier;
     }
 
     private  void ClearRecoil()

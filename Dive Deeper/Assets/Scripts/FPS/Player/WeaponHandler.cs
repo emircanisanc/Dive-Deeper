@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using System.Linq;
+using System.Collections.Generic;
 
 public class WeaponHandler : Singleton<WeaponHandler>
 {
@@ -9,12 +10,13 @@ public class WeaponHandler : Singleton<WeaponHandler>
     public WeaponBaseAbstract Weapon => weapon;
     public Action<WeaponBaseAbstract> OnWeaponSwitched;
 
-    [SerializeField] WeaponBaseAbstract[] weapons;
+    [SerializeField] List<WeaponBaseAbstract> weapons;
 
     protected override void Awake()
     {
         base.Awake();
-        SwitchWeapon(weapon);
+        if (weapon)
+            SwitchWeapon(weapon);
     }
 
     void Start()
@@ -24,20 +26,23 @@ public class WeaponHandler : Singleton<WeaponHandler>
 
     void Update()
     {
-        if (Input.GetAxis("Scrool") < 0)
+        if (Input.GetAxis("Scrool") < 0 && weapons.Count > 0)
         {
             if (Weapon != weapons[0])
             {
                 SwitchWeapon(weapons[0]);   
             }
         }
-        else if (Input.GetAxis("Scrool") > 0)
+        else if (Input.GetAxis("Scrool") > 0 && weapons.Count > 1)
         {
             if (Weapon != weapons[1])
             {
                 SwitchWeapon(weapons[1]);   
             }
         }
+
+        if (weapon == null)
+            return;
 
         if (Input.GetAxis("Fire1") > 0)
         {
@@ -71,7 +76,8 @@ public class WeaponHandler : Singleton<WeaponHandler>
 
     private void SwitchWeapon(WeaponBaseAbstract newWeapon)
     {
-        weapon.gameObject.SetActive(false);
+        if (weapon)
+            weapon.gameObject.SetActive(false);
         weapon = newWeapon;
         newWeapon.gameObject.SetActive(true);
         OnWeaponSwitched?.Invoke(weapon);
@@ -93,5 +99,15 @@ public class WeaponHandler : Singleton<WeaponHandler>
         {
             filteredWeapons[0].AddBullet(bulletAmount);
         }
+    }
+
+    public void AddWeapon(GameObject weaponPf)
+    {
+        var newWeapon = Instantiate(weaponPf, Vector3.zero, Quaternion.identity);
+        newWeapon.transform.SetParent(camTransform);
+        newWeapon.transform.localPosition = Vector3.zero;
+        newWeapon.transform.localRotation = Quaternion.identity;
+        weapons.Add(newWeapon.GetComponent<WeaponBaseAbstract>());
+        SwitchWeapon(weapons[weapons.Count - 1]);
     }
 }

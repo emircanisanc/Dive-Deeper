@@ -21,11 +21,16 @@ public class InGameUI : MonoBehaviour
     void Start()
     {
         lastWeapon = WeaponHandler.Instance.Weapon;
-        lastWeapon.OnCurrentAmmoReduced += UpdateBullet;
-        lastWeapon.OnTotalAmmoReduced += UpdateMaxBullet;
-        lastWeapon.OnReloadTimeChanged += UpdateReloadBar;
-        UpdateBullet(lastWeapon.CurrentAmmo);
-        UpdateMaxBullet(lastWeapon.TotalAmmo);
+        if (lastWeapon)
+        {
+            lastWeapon.OnCurrentAmmoReduced += UpdateBullet;
+            lastWeapon.OnTotalAmmoReduced += UpdateMaxBullet;
+            lastWeapon.OnReloadTimeChanged += UpdateReloadBar;
+
+            UpdateBullet(lastWeapon.CurrentAmmo);
+            UpdateMaxBullet(lastWeapon.TotalAmmo);
+        }
+
 
         WeaponHandler.Instance.OnWeaponSwitched += UpdateListeners;
 
@@ -104,7 +109,7 @@ public class InGameUI : MonoBehaviour
         if (value > 0)
         {
             reloadBarParent.SetActive(true);
-            reloadBar.fillAmount =  (lastWeapon.MaxReloadTime - value) / lastWeapon.MaxReloadTime;
+            reloadBar.fillAmount = (lastWeapon.MaxReloadTime - value) / lastWeapon.MaxReloadTime;
         }
         else
         {

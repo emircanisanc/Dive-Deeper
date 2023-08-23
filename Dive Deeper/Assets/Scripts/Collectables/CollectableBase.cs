@@ -16,6 +16,11 @@ public class CollectableBase : MonoBehaviour
 
     protected virtual void Collect(Collider other)
     {
+        AfterCollect();
+    }
+
+    protected void AfterCollect()
+    {
         // play sound
         Destroy(gameObject);
     }

@@ -156,7 +156,7 @@ public class GunBase : WeaponBaseAbstract, IBackfireable
 
     protected void SendLine(Vector3 dir)
     {
-        float min = UnityEngine.Random.Range(0.1f, 0.4f);
+        float min = UnityEngine.Random.Range(0.1f, 0.2f);
         Vector3 start = firePoint.position + dir * min;
         /* trailRenderer.transform.position = start;
         trailRenderer.Clear(); // clear existing positions from the trail renderer
