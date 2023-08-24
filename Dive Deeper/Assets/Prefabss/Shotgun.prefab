@@ -225,10 +225,10 @@ MonoBehaviour:
   firePoint: {fileID: 5385375998827393063}
   fireRate: 0.8
   range: 30
-  recoilMultiplier: 1
+  recoilMultiplier: 10
   recoilAmountX: 150
   recoilAmountY: 150
-  maxRecoilTime: 0.7
+  maxRecoilTime: 3
   sprayMultiplier: 1
   ammoPerShot: 4
 --- !u!1 &5385375998827393060
