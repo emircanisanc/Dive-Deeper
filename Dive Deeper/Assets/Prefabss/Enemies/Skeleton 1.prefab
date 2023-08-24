@@ -42,10 +42,7 @@ GameObject:
   - component: {fileID: 5392782194361235099}
   - component: {fileID: 5392782194361235098}
   - component: {fileID: 5392782194361235076}
-  - component: {fileID: 5392782194361235078}
-  - component: {fileID: 5392782194361235079}
   - component: {fileID: 5392782194361235075}
-  - component: {fileID: 3494871197364462495}
   - component: {fileID: -3772905397785159665}
   m_Layer: 7
   m_Name: Skeleton 1
@@ -107,34 +104,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &5392782194361235078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5392782194361235096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a1a9bca9f554d549815b00173f0342d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthBase: {fileID: 5392782194361235079}
-  audioEventOnHitDamage: {fileID: 11400000, guid: 10510aa4791fbd54eb8933dfff8376be,
-    type: 2}
---- !u!114 &5392782194361235079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5392782194361235096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11822495ed0199847be6be13453f9c32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: {fileID: 11400000, guid: f1145cc54a379b24cb1a79a404c0bed9, type: 2}
 --- !u!114 &5392782194361235075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,6 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3921f58b4b4cb834d9c39786b12927fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 0
   attackRange: 2
   attackRate: 2
   attackDamage: 7
@@ -156,20 +126,6 @@ MonoBehaviour:
   attackOriginTransform: {fileID: 1257816011, guid: 45be8337192bc1f4bab31a21ab0d82a7,
     type: 3}
   attackAnimCount: 3
-  itemDropHandler: {fileID: 3494871197364462495}
---- !u!114 &3494871197364462495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5392782194361235096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cfc1b67cc884864783cec97700c5513, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemDropData: {fileID: 11400000, guid: 3046250c449ab7d46bd62ab4c996b6eb, type: 2}
 --- !u!54 &-3772905397785159665
 Rigidbody:
   m_ObjectHideFlags: 0
