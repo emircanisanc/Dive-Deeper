@@ -6,11 +6,17 @@ public class GameManager : Singleton<GameManager>
 {
     bool isGameEnd;
     bool isGamePaused;
+    public GameObject doorToClose;
 
     protected override void Awake()
     {
         base.Awake();
         Application.targetFrameRate = 60;
+    }
+
+    public void StartPhaseTwo()
+    {
+        doorToClose.SetActive(false);
     }
 
     public void WinGame()

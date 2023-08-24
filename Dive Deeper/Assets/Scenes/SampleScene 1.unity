@@ -1743,6 +1743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 010b97b7c41227f49873a88112024d48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyToActive: {fileID: 0}
 --- !u!1 &1455281689
 GameObject:
   m_ObjectHideFlags: 0
@@ -2938,3 +2939,72 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2487c54963f164f4a81838c22afeca61, type: 3}
+--- !u!1001 &8568865586589494905
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 61485104701166869, guid: 3fe56e31b798025439d4ca5202541d6e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 61485104701166869, guid: 3fe56e31b798025439d4ca5202541d6e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 61485104701166869, guid: 3fe56e31b798025439d4ca5202541d6e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.292
+      objectReference: {fileID: 0}
+    - target: {fileID: 61485104701166869, guid: 3fe56e31b798025439d4ca5202541d6e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -31.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 61485104701166869, guid: 3fe56e31b798025439d4ca5202541d6e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61485104701166869, guid: 3fe56e31b798025439d4ca5202541d6e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61485104701166869, guid: 3fe56e31b798025439d4ca5202541d6e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61485104701166869, guid: 3fe56e31b798025439d4ca5202541d6e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61485104701166869, guid: 3fe56e31b798025439d4ca5202541d6e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61485104701166869, guid: 3fe56e31b798025439d4ca5202541d6e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61485104701166869, guid: 3fe56e31b798025439d4ca5202541d6e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61485104701166955, guid: 3fe56e31b798025439d4ca5202541d6e,
+        type: 3}
+      propertyPath: m_Name
+      value: Mind Juice
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3fe56e31b798025439d4ca5202541d6e, type: 3}

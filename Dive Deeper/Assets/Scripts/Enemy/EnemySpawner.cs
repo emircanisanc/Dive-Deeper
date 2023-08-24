@@ -41,7 +41,7 @@ public class EnemySpawner : Singleton<EnemySpawner>
 
     private void EndTimer()
     {
-        GameManager.Instance.WinGame();
+        GameManager.Instance.StartPhaseTwo();
     }
 
     private void SpawnEnemy()
