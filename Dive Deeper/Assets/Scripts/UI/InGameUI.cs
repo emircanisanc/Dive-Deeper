@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class InGameUI : MonoBehaviour
+public class InGameUI : Singleton<InGameUI>
 {
     [SerializeField] Float health;
     [SerializeField] Float maxHealth;
@@ -36,6 +36,17 @@ public class InGameUI : MonoBehaviour
 
         UpdateHealth(health.Value);
         UpdateMaxHealth(maxHealth.Value);
+    }
+
+
+    public void ShowWinGameUI()
+    {
+
+    }
+
+    public void ShowLoseGameUI()
+    {
+
     }
 
     private void UpdateListeners(WeaponBaseAbstract newWeapon)

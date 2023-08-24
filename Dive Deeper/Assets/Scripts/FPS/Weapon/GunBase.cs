@@ -10,7 +10,7 @@ public class GunBase : WeaponBaseAbstract, IBackfireable
     protected AudioSource audioSource;
     [Header("Visuals")]
     // [SerializeField] private TrailRenderer trailRenderer;
-    [SerializeField] private Transform firePoint;
+    [SerializeField] protected Transform firePoint;
     
     [Header("Fire Settings")]
     [SerializeField] protected float fireRate = 0.1f;
@@ -168,7 +168,7 @@ public class GunBase : WeaponBaseAbstract, IBackfireable
         Debug.DrawLine(firePoint.position, firePoint.position + cam.forward * range);
     }
 
-    protected void SendLine(Vector3 dir)
+    protected virtual void SendLine(Vector3 dir)
     {
         float min = UnityEngine.Random.Range(0.1f, 0.2f);
         Vector3 start = firePoint.position + dir * min;
@@ -184,7 +184,7 @@ public class GunBase : WeaponBaseAbstract, IBackfireable
         TrailManager.Instance.CreateTrail(start, end, Color.blue);
     }
 
-    protected Vector3 CalculateBulletTargetPos(Transform cam)
+    protected virtual Vector3 CalculateBulletTargetPos(Transform cam)
     {
         Vector3 targetPos = cam.position + cam.forward * 10;
         var hits = Physics.RaycastAll(cam.position, cam.forward, range, targetLayer);
