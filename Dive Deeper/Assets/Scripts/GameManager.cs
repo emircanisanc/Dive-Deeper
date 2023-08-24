@@ -6,6 +6,13 @@ public class GameManager : Singleton<GameManager>
 {
     bool isGameEnd;
     bool isGamePaused;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        Application.targetFrameRate = 60;
+    }
+
     public void WinGame()
     {
         isGameEnd = true;

@@ -9,7 +9,6 @@ public class CollectableSpawner : MonoBehaviour
     [SerializeField] float spawnDuration = 10f;
     GameObject lastSpawned;
     float nextSpawnTime;
-    bool set;
 
     void Start()
     {
@@ -20,18 +19,10 @@ public class CollectableSpawner : MonoBehaviour
     {
         if (lastSpawned == null)
         {
-            if (set)
-            {
-                if (Time.time >= nextSpawnTime)
-                {
-                    set = false;
-                    SpawnRandomCollectable();
-                }
-            }
-            else
+            if (Time.time >= nextSpawnTime)
             {
                 nextSpawnTime = Time.time + spawnDuration;
-                set = true;
+                SpawnRandomCollectable();
             }
         }
     }
