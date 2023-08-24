@@ -14,11 +14,12 @@ public class CollectableGun : CollectableBase
             weaponInfoUI.SetActive(true);
             weaponHandler.AddWeapon(weaponPf);
             isPaused = true;
-            GameManager.Instance.PauseGame();
+            GameManager.Instance.canPauseGame = false;
+            Time.timeScale = 0f;
         }
     }
 
-    void Update()
+    void LateUpdate()
     {
         if (!isPaused)
             return;
@@ -26,7 +27,8 @@ public class CollectableGun : CollectableBase
         if (Input.anyKeyDown)
         {
             weaponInfoUI.SetActive(false);
-            GameManager.Instance.UnPauseGame();
+            Time.timeScale = 1f;
+            GameManager.Instance.SetCanPauseGame();
             AfterCollect();
         }
     }
