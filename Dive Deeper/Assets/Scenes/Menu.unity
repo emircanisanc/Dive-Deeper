@@ -2322,6 +2322,7 @@ MonoBehaviour:
   pickupSounds: {fileID: 0}
   creatureSounds: {fileID: 0}
   buttonClip: {fileID: 8300000, guid: 9c46d51637e534442abd180345f84948, type: 3}
+  musicClip: {fileID: 0}
 --- !u!4 &1172715632
 Transform:
   m_ObjectHideFlags: 0
