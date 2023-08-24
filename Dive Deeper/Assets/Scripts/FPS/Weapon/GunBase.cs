@@ -36,7 +36,7 @@ public class GunBase : WeaponBaseAbstract, IBackfireable
     {
         base.Start();
         audioSource = GetComponent<AudioSource>();
-        audioSource.volume = 0.5f;
+        audioSource.volume = AudioManager.Instance.SoundVolume;
         audioSource.playOnAwake = false;
     }
 

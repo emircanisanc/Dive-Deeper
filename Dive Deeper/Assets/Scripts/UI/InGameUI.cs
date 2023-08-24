@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class InGameUI : Singleton<InGameUI>
 {
@@ -15,6 +16,10 @@ public class InGameUI : Singleton<InGameUI>
     [SerializeField] Image healthBar;
     [SerializeField] TextMeshProUGUI healthTMP;
     [SerializeField] TextMeshProUGUI maxHealthTMP;
+
+    public GameObject pausePanel;
+    public GameObject winPanel;
+    public GameObject losePanel;
 
     WeaponBaseAbstract lastWeapon;
 
@@ -36,6 +41,45 @@ public class InGameUI : Singleton<InGameUI>
 
         UpdateHealth(health.Value);
         UpdateMaxHealth(maxHealth.Value);
+    }
+
+    public void OnContinueBtnPressed()
+    {
+        AudioManager.Instance.PlayButtonSound();
+        GameManager.Instance.UnPauseGame();
+    }
+
+    public void OnRestartBtnPressed()
+    {
+        AudioManager.Instance.PlayButtonSound();
+        RestartLevel();
+    }
+
+    public void OnSoundValueChanged(float value)
+    {
+        
+    }
+
+    public void OnMusicValueChanged(float value)
+    {
+        
+    }
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void ShowPausePanel()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        pausePanel.SetActive(true);  
+    }
+
+    public void ClosePausePanel()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        pausePanel.SetActive(false);   
     }
 
 

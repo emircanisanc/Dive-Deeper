@@ -36,13 +36,13 @@ public class PlayerMovement : MonoBehaviour
         controller = GetComponent<CharacterController>();
         speed = movementStats.moveSpeed;
         audioSource = GetComponent<AudioSource>();
-        audioSource.volume = 0.5f;
         audioSource.playOnAwake = false;
     }
 
     void Start()
     {
         PlayerHealth.Instance.OnPlayerDied += DisableMovement;
+        audioSource.volume = AudioManager.Instance.SoundVolume;
     }
 
     void Update()

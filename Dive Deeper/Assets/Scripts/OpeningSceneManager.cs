@@ -22,6 +22,7 @@ public class OpeningSceneManager : MonoBehaviour
 
     void Start()
     {
+        audioSource.volume = AudioManager.Instance.SoundVolume;
         StartCoroutine(StartDialog());
     }
 
@@ -45,7 +46,7 @@ public class OpeningSceneManager : MonoBehaviour
         }
         reverseEyes.SetActive(true);
         yield return new WaitForSeconds(1.4f);
-        AudioSource.PlayClipAtPoint(endingClip, transform.position);
+        AudioManager.Instance.PlayClipAtPoint(endingClip, transform.position);
         yield return new WaitForSeconds(endDuration);
         SceneManager.LoadScene("Level 1");
     }

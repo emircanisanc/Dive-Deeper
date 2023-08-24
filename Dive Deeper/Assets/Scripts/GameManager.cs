@@ -16,6 +16,7 @@ public class GameManager : Singleton<GameManager>
     public List<Dialog> startDialogs;
     public float startDuration;
     public AudioSource audioSource;
+    public bool canPauseGame { get; set; } = true;
 
     bool isGameEnd;
     bool isGamePaused;
@@ -25,11 +26,7 @@ public class GameManager : Singleton<GameManager>
     {
         base.Awake();
         Application.targetFrameRate = 60;
-        if (audioSource)
-        {
-            audioSource.volume = 0.5f;
-            audioSource.playOnAwake = false;
-        }
+        Time.timeScale = 1f;
     }
 
     void Start()
@@ -37,7 +34,18 @@ public class GameManager : Singleton<GameManager>
         PlayerHealth.Instance.OnPlayerDied += LoseGame;
 
         if (talkAtStart)
+        {
+            audioSource.volume = AudioManager.Instance.SoundVolume;
             StartCoroutine(StartDialog());
+        }
+        else
+        {
+            audioSource.volume = AudioManager.Instance.MusicVolume;
+            audioSource.clip = AudioManager.Instance.musicClip;
+            audioSource.loop = true;
+            audioSource.Play();
+        }
+
     }
 
     IEnumerator StartDialog()
@@ -56,6 +64,10 @@ public class GameManager : Singleton<GameManager>
             yield return new WaitForSeconds(dialog.duration);
         }
         talkCanvas.SetActive(false);
+        audioSource.volume = AudioManager.Instance.MusicVolume;
+        audioSource.clip = AudioManager.Instance.musicClip;
+        audioSource.loop = true;
+        audioSource.Play();
     }
 
     public void StartPhaseTwo()
@@ -81,6 +93,17 @@ public class GameManager : Singleton<GameManager>
         InGameUI.Instance.ShowLoseGameUI();
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
+        {
+            if (isGamePaused)
+                UnPauseGame();
+            else
+                PauseGame();
+        }
+    }
+
     public void PauseGame()
     {
         if (isGameEnd)
@@ -89,6 +112,10 @@ public class GameManager : Singleton<GameManager>
         if (isGamePaused)
             return;
 
+        if (!canPauseGame)
+            return;
+
+        InGameUI.Instance.ShowPausePanel();
         isGamePaused = true;
         Time.timeScale = 0f;
     }
@@ -101,7 +128,21 @@ public class GameManager : Singleton<GameManager>
         if (!isGamePaused)
             return;
 
+        if (!canPauseGame)
+            return;
+
+        InGameUI.Instance.ClosePausePanel();
         isGamePaused = false;
         Time.timeScale = 1f;
+    }
+    
+    public void SetCanPauseGame()
+    {
+        Invoke(nameof(SetPauseActive), 1.2f);
+    }
+
+    private void SetPauseActive()
+    {
+        canPauseGame = true;
     }
 }

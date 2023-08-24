@@ -71,3 +71,10 @@ public class MouseLook : MonoBehaviour
     }
 
 }
+
+/* 
+Assertion failed on expression: 'CompareApproximately(SqrMagnitude(result), 1.0F)'
+UnityEngine.Quaternion:Internal_FromEulerRad (UnityEngine.Vector3)
+MouseLook:MouseControl () (at Assets/Scripts/FPS/Player/MouseLook.cs:62)
+MouseLook:Update () (at Assets/Scripts/FPS/Player/MouseLook.cs:37)
+ */
