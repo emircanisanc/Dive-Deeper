@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class AudioManager : Singleton<AudioManager>
 {
@@ -14,10 +15,13 @@ public class AudioManager : Singleton<AudioManager>
 
     public AudioClip musicClip;
 
+    public Action<float> OnMusicVolumeChanged;
+    public Action<float> OnSoundVolumeChanged;
+
     float musicVolume;
-    public float MusicVolume => musicVolume;
+    public float MusicVolume { get => musicVolume; set { musicVolume = value; OnMusicVolumeChanged?.Invoke(musicVolume); } }
     float soundVolume;
-    public float SoundVolume => soundVolume;
+    public float SoundVolume { get => soundVolume; set { soundVolume = value; OnSoundVolumeChanged?.Invoke(soundVolume); } }
 
 
     protected override void Awake()

@@ -17,8 +17,15 @@ public class InGameUI : Singleton<InGameUI>
     [SerializeField] TextMeshProUGUI healthTMP;
     [SerializeField] TextMeshProUGUI maxHealthTMP;
 
+    [Header("Pause Panel")]
     public GameObject pausePanel;
+    public Slider soundSlider;
+    public Slider musicSlider;
+
+    [Header("Win Panel")]
     public GameObject winPanel;
+
+    [Header("Lose Panel")]
     public GameObject losePanel;
 
     WeaponBaseAbstract lastWeapon;
@@ -57,12 +64,12 @@ public class InGameUI : Singleton<InGameUI>
 
     public void OnSoundValueChanged(float value)
     {
-        
+        AudioManager.Instance.SoundVolume = value;
     }
 
     public void OnMusicValueChanged(float value)
     {
-        
+        AudioManager.Instance.MusicVolume = value;
     }
 
     public void RestartLevel()
@@ -72,12 +79,17 @@ public class InGameUI : Singleton<InGameUI>
 
     public void ShowPausePanel()
     {
+        soundSlider.value = AudioManager.Instance.SoundVolume;
+        musicSlider.value = AudioManager.Instance.MusicVolume;
         Cursor.lockState = CursorLockMode.None;
         pausePanel.SetActive(true);  
     }
 
     public void ClosePausePanel()
     {
+        PlayerPrefs.SetFloat("soundVolume", AudioManager.Instance.SoundVolume);
+        PlayerPrefs.SetFloat("musicVolume", AudioManager.Instance.MusicVolume);
+        PlayerPrefs.Save();
         Cursor.lockState = CursorLockMode.Locked;
         pausePanel.SetActive(false);   
     }

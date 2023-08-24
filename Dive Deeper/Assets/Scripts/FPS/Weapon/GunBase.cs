@@ -38,6 +38,12 @@ public class GunBase : WeaponBaseAbstract, IBackfireable
         audioSource = GetComponent<AudioSource>();
         audioSource.volume = AudioManager.Instance.SoundVolume;
         audioSource.playOnAwake = false;
+        AudioManager.Instance.OnSoundVolumeChanged += ChangeSoundVolume;
+    }
+
+    private void ChangeSoundVolume(float volume)
+    {
+        audioSource.volume = volume;
     }
 
     public override void HandleSecondFire(Transform cam)

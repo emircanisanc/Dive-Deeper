@@ -47,28 +47,23 @@ public class MouseLook : MonoBehaviour
     }
 
     private void MouseControl()
-    {
-        WantedYRotation += Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+{
+    WantedYRotation += Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
 
-        WantedCameraXRotation -= Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+    WantedCameraXRotation -= Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        WantedCameraXRotation = Mathf.Clamp(WantedCameraXRotation, -90f, 90f);
+    WantedCameraXRotation = Mathf.Clamp(WantedCameraXRotation, -90f, 90f);
 
-        currentYRotation = Mathf.SmoothDamp(currentYRotation, WantedYRotation, ref rotationYVelocity, yRotationSpeed);
-        currentCameraXRotation = Mathf.SmoothDamp(currentCameraXRotation, WantedCameraXRotation, ref cameraXVelocity, xCameraSpeed);
+    currentYRotation = Mathf.SmoothDamp(currentYRotation, WantedYRotation, ref rotationYVelocity, yRotationSpeed);
+    currentCameraXRotation = Mathf.SmoothDamp(currentCameraXRotation, WantedCameraXRotation, ref cameraXVelocity, xCameraSpeed);
 
-        try
-        {
-            playerBody.rotation = Quaternion.Euler(0, currentYRotation, 0);
-            transform.localRotation = Quaternion.Euler(currentCameraXRotation, 0, 0);
-        }
-        catch (Exception ex)
-        {
-            // DO NOT EDIT
-        }
+    Quaternion playerRotation = Quaternion.Euler(0, currentYRotation, 0).normalized;
+    Quaternion cameraRotation = Quaternion.Euler(currentCameraXRotation, 0, 0).normalized;
 
+    playerBody.rotation = playerRotation;
+    transform.localRotation = cameraRotation;
+}
 
-    }
 
 }
 

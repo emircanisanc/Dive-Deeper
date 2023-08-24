@@ -624,6 +624,8 @@ MonoBehaviour:
   grenadeExplosions: {fileID: 11400000, guid: a0f4787a4f2c22a4da4fde8a9e863dfa, type: 2}
   pickupSounds: {fileID: 11400000, guid: e6650c2b997ab1140b850de4d56bdff3, type: 2}
   creatureSounds: {fileID: 0}
+  buttonClip: {fileID: 0}
+  musicClip: {fileID: 0}
 --- !u!1001 &582901437
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3032,6 +3034,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2219577870884522374, guid: 2487c54963f164f4a81838c22afeca61,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7317870351189271511, guid: 2487c54963f164f4a81838c22afeca61,
         type: 3}
       propertyPath: m_AnchorMax.y
