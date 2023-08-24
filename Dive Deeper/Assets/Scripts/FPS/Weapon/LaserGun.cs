@@ -25,7 +25,7 @@ public class LaserGun : GunBase
     {
         if (grenadeAmount > 0)
         {
-            if (Time.time >= nextGrenadeTime)
+            if (Time.time >= nextGrenadeTime && canFireGrenade)
             {
                 canFireGrenade = false;
                 nextGrenadeTime = Time.time + 0.3f;
