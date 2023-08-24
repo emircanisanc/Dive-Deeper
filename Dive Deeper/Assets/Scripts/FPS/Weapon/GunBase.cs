@@ -73,8 +73,8 @@ public class GunBase : WeaponBaseAbstract, IBackfireable
             /* PassiveMuzzle();
             ActiveMuzzle();
  */
-            Vector3 startPos = cam.position;
             Vector3 dir = cam.forward + UnityEngine.Random.insideUnitSphere * sprayAmount;
+            Vector3 startPos = cam.position;
             SendLine(dir); // DEBUG LINE
             FireBullet(startPos, dir);
             nextAttackTime = Time.timeSinceLevelLoad + fireRate;
@@ -176,13 +176,14 @@ public class GunBase : WeaponBaseAbstract, IBackfireable
 
     protected virtual void SendLine(Vector3 dir)
     {
-        float min = UnityEngine.Random.Range(0.1f, 0.2f);
-        Vector3 start = firePoint.position + dir * min;
+        float min = UnityEngine.Random.Range(0.1f, 0.3f);
+        //Vector3 start = firePoint.position + dir * min;
         /* trailRenderer.transform.position = start;
         trailRenderer.Clear(); // clear existing positions from the trail renderer
         trailRenderer.enabled = true; // enable the trail renderer */
 
         Vector3 end = CalculateBulletTargetPos(Camera.main.transform);
+        Vector3 start = firePoint.position + (end - firePoint.position).normalized;
         /* trailRenderer.AddPosition(start);
         trailRenderer.AddPosition(end); */
 
