@@ -23,7 +23,7 @@ public class CollectableGun : CollectableBase
         if (!isPaused)
             return;
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.anyKeyDown)
         {
             weaponInfoUI.SetActive(false);
             GameManager.Instance.UnPauseGame();

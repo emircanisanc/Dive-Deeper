@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class OpeningSceneManager : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class OpeningSceneManager : MonoBehaviour
     public float endDuration = 3f;
     public float durationBeforeDialog = 3f;
     public AudioClip endingClip;
+    public Image talkerImage;
 
     void Start()
     {
@@ -32,6 +34,7 @@ public class OpeningSceneManager : MonoBehaviour
         textParent.SetActive(true);
         foreach (Dialog dialog in dialogs)
         {
+            talkerImage.sprite = dialog.talkerImage;
             tmp.SetText(dialog.dialogText);
             if (dialog.dialogSound)
             {
@@ -51,6 +54,7 @@ public class OpeningSceneManager : MonoBehaviour
 [System.Serializable]
 public class Dialog
 {
+    public Sprite talkerImage;
     public string dialogText;
     public AudioClip dialogSound;
     public float duration;

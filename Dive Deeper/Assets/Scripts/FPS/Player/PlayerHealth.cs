@@ -19,7 +19,7 @@ public class PlayerHealth : Singleton<PlayerHealth>, IDamageable
 
     public void ApplyDamage(float damage)
     {
-        health.Value -= damage;
+        health.Value = Mathf.Max(health.Value - damage, 0);
 
         if (health.Value <= 0 && !isDead)
         {
