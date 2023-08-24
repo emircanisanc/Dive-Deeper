@@ -36,6 +36,7 @@ public class GameManager : Singleton<GameManager>
         if (talkAtStart)
         {
             audioSource.volume = AudioManager.Instance.SoundVolume;
+            AudioManager.Instance.OnSoundVolumeChanged += ChangeSoundVolume;
             StartCoroutine(StartDialog());
         }
         else
@@ -43,9 +44,15 @@ public class GameManager : Singleton<GameManager>
             audioSource.volume = AudioManager.Instance.MusicVolume;
             audioSource.clip = AudioManager.Instance.musicClip;
             audioSource.loop = true;
+            AudioManager.Instance.OnMusicVolumeChanged += ChangeSoundVolume;
             audioSource.Play();
         }
 
+    }
+
+    private void ChangeSoundVolume(float value)
+    {
+        audioSource.volume = value;
     }
 
     IEnumerator StartDialog()
@@ -63,6 +70,8 @@ public class GameManager : Singleton<GameManager>
             }
             yield return new WaitForSeconds(dialog.duration);
         }
+        AudioManager.Instance.OnSoundVolumeChanged -= ChangeSoundVolume;
+        AudioManager.Instance.OnMusicVolumeChanged += ChangeSoundVolume;
         talkCanvas.SetActive(false);
         audioSource.volume = AudioManager.Instance.MusicVolume;
         audioSource.clip = AudioManager.Instance.musicClip;

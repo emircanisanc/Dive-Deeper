@@ -226,8 +226,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuSceneManager, Assembly-CSharp
+      - m_Target: {fileID: 7317870352244341266}
+        m_TargetAssemblyTypeName: InGameUI, Assembly-CSharp
         m_MethodName: OnSoundValueChanged
         m_Mode: 0
         m_Arguments:
@@ -672,8 +672,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuSceneManager, Assembly-CSharp
+      - m_Target: {fileID: 7317870352244341266}
+        m_TargetAssemblyTypeName: InGameUI, Assembly-CSharp
         m_MethodName: OnMusicValueChanged
         m_Mode: 0
         m_Arguments:
@@ -2833,6 +2833,8 @@ MonoBehaviour:
   healthTMP: {fileID: 7317870352590161684}
   maxHealthTMP: {fileID: 7317870351189271509}
   pausePanel: {fileID: 684873295568680968}
+  soundSlider: {fileID: 4964399530875895310}
+  musicSlider: {fileID: 979529312868792818}
   winPanel: {fileID: 0}
   losePanel: {fileID: 0}
 --- !u!1 &7317870352314232296

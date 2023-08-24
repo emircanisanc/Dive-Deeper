@@ -42,7 +42,13 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         PlayerHealth.Instance.OnPlayerDied += DisableMovement;
+        AudioManager.Instance.OnSoundVolumeChanged += ChangeSoundVolume;
         audioSource.volume = AudioManager.Instance.SoundVolume;
+    }
+
+    private void ChangeSoundVolume(float value)
+    {
+        audioSource.volume = value;
     }
 
     void Update()
