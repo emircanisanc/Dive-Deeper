@@ -253,7 +253,7 @@ MonoBehaviour:
     type: 3}
   rb: {fileID: 8471950931205796300}
   speed: 1000
-  explosionRadius: 3
+  explosionRadius: 3.5
   damage: 250
   targetLayer:
     serializedVersion: 2
