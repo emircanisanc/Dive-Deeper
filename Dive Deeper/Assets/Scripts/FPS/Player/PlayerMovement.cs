@@ -42,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         PlayerHealth.Instance.OnPlayerDied += DisableMovement;
+        GameManager.Instance.OnGameEnd += DisableMovement;
         AudioManager.Instance.OnSoundVolumeChanged += ChangeSoundVolume;
         audioSource.volume = AudioManager.Instance.SoundVolume;
     }

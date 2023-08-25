@@ -22,6 +22,7 @@ public class WeaponHandler : Singleton<WeaponHandler>
     void Start()
     {
         PlayerHealth.Instance.OnPlayerDied += DisableWeapon;
+        GameManager.Instance.OnGameEnd += DisableWeapon;
     }
 
     void Update()

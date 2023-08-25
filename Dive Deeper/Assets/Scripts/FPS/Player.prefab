@@ -343,6 +343,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: {fileID: 11400000, guid: 367ec88565f62644bb2315b17f8c0121, type: 2}
   maxHealth: {fileID: 11400000, guid: 9161091c161f9d24ea11acf8344b8a08, type: 2}
+  damageClips: {fileID: 11400000, guid: 7af36f41ad9f4ad4884a7ff86ea5a031, type: 2}
+  dieClips: {fileID: 11400000, guid: dbc82a38262f8b34b8f9e060915bd994, type: 2}
 --- !u!82 &6290396212186891609
 AudioSource:
   m_ObjectHideFlags: 0

@@ -8,22 +8,37 @@ public class PlayerHealth : Singleton<PlayerHealth>, IDamageable
     [SerializeField] Float health;
     [SerializeField] Float maxHealth;
 
-    public Action OnPlayerDied;
+    public AudioClipsSO damageClips;
+    public AudioClipsSO dieClips;
 
+    public Action OnPlayerDied;
+    AudioSource audioSource;
     bool isDead;
+
 
     void Start()
     {
-        health.Value = maxHealth.Value;    
+        audioSource = GetComponent<AudioSource>();
+        health.Value = maxHealth.Value;
     }
 
     public void ApplyDamage(float damage)
     {
         health.Value = Mathf.Max(health.Value - damage, 0);
 
-        if (health.Value <= 0 && !isDead)
+        if (health.Value <= 0)
         {
-            Die();
+            if (!isDead)
+            {
+                audioSource.clip = dieClips.RandomAudioClip;
+                audioSource.Play();
+                Die();
+            }
+        }
+        else
+        {
+            audioSource.clip = damageClips.RandomAudioClip;
+            audioSource.Play();
         }
     }
 

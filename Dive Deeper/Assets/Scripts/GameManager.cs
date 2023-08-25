@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using DG.Tweening;
+using System;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -19,6 +20,8 @@ public class GameManager : Singleton<GameManager>
     public float startDuration;
     public AudioSource audioSource;
     public bool canPauseGame { get; set; } = true;
+
+    public Action OnGameEnd;
 
     bool isGameEnd;
     bool isGamePaused;
@@ -92,6 +95,7 @@ public class GameManager : Singleton<GameManager>
             return;
 
         isGameEnd = true;
+        OnGameEnd?.Invoke();
         InGameUI.Instance.ShowWinGameUI();
     }
 
@@ -101,6 +105,7 @@ public class GameManager : Singleton<GameManager>
             return;
 
         isGameEnd = true;
+        OnGameEnd?.Invoke();
         InGameUI.Instance.ShowLoseGameUI();
     }
 
