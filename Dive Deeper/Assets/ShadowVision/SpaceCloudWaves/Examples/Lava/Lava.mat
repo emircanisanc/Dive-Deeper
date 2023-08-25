@@ -117,7 +117,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaClip: 0
-    - _AlphaClipThreshold: 0.25
+    - _AlphaClipThreshold: 0.01
     - _AlphaDensity: 3
     - _BUILTIN_QueueControl: -1
     - _BUILTIN_QueueOffset: 0
