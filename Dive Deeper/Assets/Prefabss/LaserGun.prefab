@@ -290,10 +290,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxReloadTime: 2
-  maxAmmo: 200
-  clipSize: 25
+  maxAmmo: 60
+  clipSize: 30
   bulletType: 0
-  damage: 5
+  damage: 15
   targetLayer:
     serializedVersion: 2
     m_Bits: 192
@@ -311,7 +311,7 @@ MonoBehaviour:
   grenadePrefab: {fileID: 8471950931205796298, guid: a9fa88abc9517334086e559702ca766f,
     type: 3}
   grenadePoint: {fileID: 3878449371176941701}
-  maxGrenadeAmount: 5
+  maxGrenadeAmount: 7
 --- !u!82 &8607821342353356399
 AudioSource:
   m_ObjectHideFlags: 0

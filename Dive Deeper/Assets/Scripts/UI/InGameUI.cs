@@ -12,6 +12,8 @@ public class InGameUI : Singleton<InGameUI>
     [SerializeField] Float maxHealth;
     [SerializeField] TextMeshProUGUI bulletTMP;
     [SerializeField] TextMeshProUGUI maxBulletTMP;
+    [SerializeField] TextMeshProUGUI bombTMP;
+    [SerializeField] TextMeshProUGUI maxBombTMP;
     [SerializeField] GameObject reloadBarParent;
     [SerializeField] Image reloadBar;
     [SerializeField] Image healthBar;
@@ -47,6 +49,7 @@ public class InGameUI : Singleton<InGameUI>
 
             UpdateBullet(lastWeapon.CurrentAmmo);
             UpdateMaxBullet(lastWeapon.TotalAmmo);
+
         }
 
 
@@ -67,7 +70,7 @@ public class InGameUI : Singleton<InGameUI>
         AudioManager.Instance.PlayButtonSound();
         RestartLevel();
     }
-    
+
     public void OpenNextLevel()
     {
         AudioManager.Instance.PlayButtonSound();
@@ -102,7 +105,7 @@ public class InGameUI : Singleton<InGameUI>
         soundSlider.value = AudioManager.Instance.SoundVolume;
         musicSlider.value = AudioManager.Instance.MusicVolume;
         Cursor.lockState = CursorLockMode.None;
-        pausePanel.SetActive(true);  
+        pausePanel.SetActive(true);
     }
 
     public void ClosePausePanel()
@@ -113,7 +116,7 @@ public class InGameUI : Singleton<InGameUI>
         PlayerPrefs.SetFloat("musicVolume", AudioManager.Instance.MusicVolume);
         PlayerPrefs.Save();
         Cursor.lockState = CursorLockMode.Locked;
-        pausePanel.SetActive(false);   
+        pausePanel.SetActive(false);
     }
 
 
@@ -188,6 +191,17 @@ public class InGameUI : Singleton<InGameUI>
     {
         maxBulletTMP.SetText(value.ToString());
     }
+
+    private void UpdateBomb(int value)
+    {
+        bombTMP.SetText(value.ToString());
+    }
+
+    private void UpdateMaxBomb(int value)
+    {
+        maxBombTMP.SetText(value.ToString());
+    }
+
 
     private void UpdateMaxHealth(float value)
     {

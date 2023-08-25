@@ -834,6 +834,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: LaserGun
       objectReference: {fileID: 0}
+    - target: {fileID: 7485499824938204182, guid: 53484ea54f21034458b01e500d9f0f72,
+        type: 3}
+      propertyPath: damage
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7485499824938204182, guid: 53484ea54f21034458b01e500d9f0f72,
+        type: 3}
+      propertyPath: maxAmmo
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7485499824938204182, guid: 53484ea54f21034458b01e500d9f0f72,
+        type: 3}
+      propertyPath: clipSize
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53484ea54f21034458b01e500d9f0f72, type: 3}
 --- !u!4 &6385704407783716651 stripped
