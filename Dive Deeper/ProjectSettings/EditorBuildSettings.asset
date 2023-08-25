@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Emir/Map 1.unity
     guid: 6fd6517b1a46cad498ea20271713066b
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 8f2b9d3d17c1ece4f984386f5bd9cab9
   m_configObjects: {}
