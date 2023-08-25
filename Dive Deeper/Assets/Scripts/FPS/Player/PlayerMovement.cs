@@ -29,6 +29,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float groundDistance = 0.3f;
     private bool isGrounded = true;
 
+    public float Horizontal { get; private set; }
+    public float Vertical { get; private set; }
+
     Vector3 velocity;
 
     void Awake()
@@ -67,6 +70,9 @@ public class PlayerMovement : MonoBehaviour
 
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
+
+        Horizontal = x;
+        Vertical = z;
 
         Vector3 move = transform.right * x + transform.forward * z;
 

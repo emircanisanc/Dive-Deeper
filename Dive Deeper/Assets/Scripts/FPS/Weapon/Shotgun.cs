@@ -7,6 +7,12 @@ public class Shotgun : GunBase
     public int ammoPerShot = 3;
     public Transform[] firepoints;
 
+    protected override void Start()
+    {
+        base.Start();
+        InGameUI.Instance.SetGreandeUI(false); 
+    }
+
     public override void HandleSecondFire(Transform cam)
     {
 
@@ -17,6 +23,12 @@ public class Shotgun : GunBase
 
     }
 
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        if (InGameUI.Instance)
+            InGameUI.Instance.SetGreandeUI(false);    
+    }
 
     public override bool HandleFire(Transform cam)
     {
