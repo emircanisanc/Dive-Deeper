@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System;
 using UnityEngine.SceneManagement;
 
 public class InGameUI : Singleton<InGameUI>
@@ -21,6 +22,7 @@ public class InGameUI : Singleton<InGameUI>
     public GameObject pausePanel;
     public Slider soundSlider;
     public Slider musicSlider;
+    public Slider sensitivitySlider;
 
     [Header("Win Panel")]
     public GameObject winPanel;
@@ -29,6 +31,10 @@ public class InGameUI : Singleton<InGameUI>
     public GameObject losePanel;
 
     WeaponBaseAbstract lastWeapon;
+
+    public Action<float> OnSensitivityChanged;
+    public string nextLevelName = "Map 2";
+    float sensitivity;
 
     void Start()
     {
@@ -61,6 +67,17 @@ public class InGameUI : Singleton<InGameUI>
         AudioManager.Instance.PlayButtonSound();
         RestartLevel();
     }
+    
+    public void OpenNextLevel()
+    {
+        AudioManager.Instance.PlayButtonSound();
+        SceneManager.LoadScene(nextLevelName);
+    }
+
+    public void OnSensitivitySliderChanged(float value)
+    {
+        MouseLook.Instance.Sensitivity = value;
+    }
 
     public void OnSoundValueChanged(float value)
     {
@@ -74,11 +91,14 @@ public class InGameUI : Singleton<InGameUI>
 
     public void RestartLevel()
     {
+        AudioManager.Instance.PlayButtonSound();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void ShowPausePanel()
     {
+        AudioManager.Instance.PlayButtonSound();
+        sensitivitySlider.value = MouseLook.Instance.Sensitivity;
         soundSlider.value = AudioManager.Instance.SoundVolume;
         musicSlider.value = AudioManager.Instance.MusicVolume;
         Cursor.lockState = CursorLockMode.None;
@@ -87,6 +107,8 @@ public class InGameUI : Singleton<InGameUI>
 
     public void ClosePausePanel()
     {
+        AudioManager.Instance.PlayButtonSound();
+        PlayerPrefs.SetFloat("sensitivity", MouseLook.Instance.Sensitivity);
         PlayerPrefs.SetFloat("soundVolume", AudioManager.Instance.SoundVolume);
         PlayerPrefs.SetFloat("musicVolume", AudioManager.Instance.MusicVolume);
         PlayerPrefs.Save();
@@ -97,12 +119,19 @@ public class InGameUI : Singleton<InGameUI>
 
     public void ShowWinGameUI()
     {
+        winPanel.SetActive(true);
+        Invoke(nameof(SetCursorVisible), 1.5f);
+    }
 
+    private void SetCursorVisible()
+    {
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void ShowLoseGameUI()
     {
-
+        losePanel.SetActive(true);
+        Invoke(nameof(SetCursorVisible), 1.5f);
     }
 
     private void UpdateListeners(WeaponBaseAbstract newWeapon)

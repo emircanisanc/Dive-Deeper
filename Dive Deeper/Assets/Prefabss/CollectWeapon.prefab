@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 5343931035446363744}
   m_Layer: 0
   m_Name: CollectWeapon
-  m_TagString: EditorOnly
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
