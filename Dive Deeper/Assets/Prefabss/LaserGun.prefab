@@ -301,7 +301,7 @@ MonoBehaviour:
   reloadClips: {fileID: 11400000, guid: 052d7b427701a4a449f64629b941c895, type: 2}
   firePoint: {fileID: 7411151782592939365}
   fireRate: 0.1
-  range: 30
+  range: 25
   recoilMultiplier: 1
   recoilAmountX: 150
   recoilAmountY: 150
