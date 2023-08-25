@@ -115,6 +115,10 @@ public abstract class WeaponBaseAbstract : MonoBehaviour
     {
         totalAmmo = Mathf.Min(maxAmmo, totalAmmo + bulletAmount);
         OnTotalAmmoReduced?.Invoke(totalAmmo);
+        if (gameObject.activeSelf && currentAmmo == 0 && CanReload)
+        {
+            StartReload();
+        }
     }
 
 }

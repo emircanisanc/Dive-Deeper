@@ -44,8 +44,9 @@ public class LaserGun : GunBase
         }
     }
 
-    void OnEnable()
+    protected override void OnEnable()
     {
+        base.OnEnable();
         if (InGameUI.Instance)
         {
             InGameUI.Instance.SetGreandeUI(true);

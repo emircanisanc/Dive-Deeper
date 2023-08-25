@@ -23,8 +23,9 @@ public class Shotgun : GunBase
 
     }
 
-    void OnEnable()
+    protected override void OnEnable()
     {
+        base.OnEnable();
         if (InGameUI.Instance)
             InGameUI.Instance.SetGreandeUI(false);    
     }

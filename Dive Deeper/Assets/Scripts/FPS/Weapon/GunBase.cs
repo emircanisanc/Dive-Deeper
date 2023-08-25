@@ -207,6 +207,14 @@ public class GunBase : WeaponBaseAbstract, IBackfireable
         // trailRenderer.enabled = false; // disable the trail renderer
     }
 
+    protected virtual void OnEnable()
+    {
+        if (currentAmmo == 0 && CanReload)
+        {
+            StartReload();
+        }
+    }
+
 }
 
 
