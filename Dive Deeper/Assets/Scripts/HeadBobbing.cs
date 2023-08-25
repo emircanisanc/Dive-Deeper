@@ -20,7 +20,6 @@ public class HeadBobbing : MonoBehaviour
     }
 
 
-
     // Event handler for the OnMove event
     private void LateUpdate()
     {
@@ -32,13 +31,7 @@ public class HeadBobbing : MonoBehaviour
 
         if (Mathf.Abs(horizontal) == 0 && Mathf.Abs(vertical) == 0)
         {
-            timer = Mathf.Max(timer - Time.deltaTime * 2f, 0f);
-            waveslice = Mathf.Sin(timer);
-            timer = timer + bobbingSpeed * Time.deltaTime;
-            if (timer > Mathf.PI * 2)
-            {
-                timer = timer - (Mathf.PI * 2);
-            }
+            timer = 0f;
         }
         else
         {

@@ -21,6 +21,13 @@ public class LaserGun : GunBase
         grenadeAmount = maxGrenadeAmount;
     }
 
+    protected override void Start()
+    {
+        base.Start();
+        InGameUI.Instance.SetGreandeUI(true);
+        InGameUI.Instance.SetGrenadeCount(grenadeAmount);
+    }
+
     public override void HandleSecondFire(Transform cam)
     {
         if (grenadeAmount > 0)
@@ -30,9 +37,19 @@ public class LaserGun : GunBase
                 canFireGrenade = false;
                 nextGrenadeTime = Time.time + 0.3f;
                 grenadeAmount--;
+                InGameUI.Instance.SetGrenadeCount(grenadeAmount);
                 audioSource.PlayOneShot(fireGrenadeClips.RandomAudioClip);
                 Instantiate(grenadePrefab, grenadePoint.position, cam.rotation);
             }
+        }
+    }
+
+    void OnEnable()
+    {
+        if (InGameUI.Instance)
+        {
+            InGameUI.Instance.SetGreandeUI(true);
+            InGameUI.Instance.SetGrenadeCount(grenadeAmount);
         }
     }
 
@@ -45,5 +62,6 @@ public class LaserGun : GunBase
     {
         base.AddBullet(bulletAmount);
         grenadeAmount = maxGrenadeAmount;
+        InGameUI.Instance.SetGrenadeCount(grenadeAmount);
     }
 }

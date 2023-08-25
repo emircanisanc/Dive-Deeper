@@ -291,7 +291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponCamera: {fileID: 5462446089991507928}
   bobbingSpeed: 1
-  bobbingAmount: 0.02
+  bobbingAmount: 0.015
   isHeadBobbing: 0
 --- !u!1 &2555592145507986001
 GameObject:
@@ -584,7 +584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponCamera: {fileID: 5462446089991507928}
   bobbingSpeed: 3
-  bobbingAmount: 0.03
+  bobbingAmount: 0.02
   isHeadBobbing: 1
 --- !u!1 &2555592146156597732
 GameObject:

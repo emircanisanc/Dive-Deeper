@@ -20,6 +20,9 @@ public class InGameUI : Singleton<InGameUI>
     [SerializeField] TextMeshProUGUI healthTMP;
     [SerializeField] TextMeshProUGUI maxHealthTMP;
 
+    [SerializeField] GameObject grenadePanel;
+    [SerializeField] TextMeshProUGUI grenadeTMP;
+
     [Header("Pause Panel")]
     public GameObject pausePanel;
     public Slider soundSlider;
@@ -160,6 +163,16 @@ public class InGameUI : Singleton<InGameUI>
             UpdateBullet(0);
             UpdateMaxBullet(0);
         }
+    }
+
+    public void SetGreandeUI(bool visible)
+    {
+        grenadePanel.SetActive(visible);
+    }
+
+    public void SetGrenadeCount(int value)
+    {
+        grenadeTMP.SetText(value.ToString());
     }
 
     void OnEnable()
