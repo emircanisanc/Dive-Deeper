@@ -8,6 +8,7 @@ public class CollectableSpawner : MonoBehaviour
     [SerializeField] CollectableBase[] collectablePrefabs;
     [SerializeField] float spawnDuration = 10f;
     GameObject lastSpawned;
+    Transform lastSpawnLocation;
     float nextSpawnTime;
 
     void Start()
@@ -29,7 +30,18 @@ public class CollectableSpawner : MonoBehaviour
 
     private void SpawnRandomCollectable()
     {
-        Vector3 spawnPoint = spawnLocations[Random.Range(0, spawnLocations.Length)].position;
+        if (lastSpawnLocation == null)
+            lastSpawnLocation = spawnLocations[Random.Range(0, spawnLocations.Length)];
+        else
+        {
+            var newLocation = spawnLocations[Random.Range(0, spawnLocations.Length)];
+            while (newLocation == lastSpawnLocation)
+            {
+                newLocation = spawnLocations[Random.Range(0, spawnLocations.Length)];
+            }
+            lastSpawnLocation = newLocation;
+        }
+        Vector3 spawnPoint = lastSpawnLocation.position;
         lastSpawned = Instantiate(collectablePrefabs[Random.Range(0, collectablePrefabs.Length)].gameObject);
         lastSpawned.transform.position = spawnPoint;
     }

@@ -14,7 +14,8 @@ public class EnemySpawner : Singleton<EnemySpawner>
     protected override void Awake()
     {
         base.Awake();
-        liveEnemyCount = FindObjectsOfType<EnemyBaseAbstract>().Length;
+        //liveEnemyCount = FindObjectsOfType<EnemyBaseAbstract>().Length;
+        liveEnemyCount = 0;
         StartCoroutine(TimerCoroutine());
     }
 
