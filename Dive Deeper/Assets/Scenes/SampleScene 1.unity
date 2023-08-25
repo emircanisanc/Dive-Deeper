@@ -1941,7 +1941,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 010b97b7c41227f49873a88112024d48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorToClose: {fileID: 0}
+  doorToMove: {fileID: 0}
+  doorTargetY: 0
   talkAtStart: 1
   talkCanvas: {fileID: 33406429}
   talkerText: {fileID: 2805783507288114313}
@@ -2621,7 +2622,7 @@ Transform:
   - {fileID: 1663103462}
   - {fileID: 725984437}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2116096701
 GameObject:
@@ -3108,10 +3109,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 130794350, guid: 2487c54963f164f4a81838c22afeca61, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 579062804, guid: 2487c54963f164f4a81838c22afeca61, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 828952282, guid: 2487c54963f164f4a81838c22afeca61, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2219577870884522374, guid: 2487c54963f164f4a81838c22afeca61,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3124346373583958507, guid: 2487c54963f164f4a81838c22afeca61,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5309340701934097325, guid: 2487c54963f164f4a81838c22afeca61,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6310851619537878208, guid: 2487c54963f164f4a81838c22afeca61,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7317870351189271511, guid: 2487c54963f164f4a81838c22afeca61,
         type: 3}
@@ -3375,7 +3403,7 @@ PrefabInstance:
     - target: {fileID: 61485104701166869, guid: 3fe56e31b798025439d4ca5202541d6e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 61485104701166869, guid: 3fe56e31b798025439d4ca5202541d6e,
         type: 3}
