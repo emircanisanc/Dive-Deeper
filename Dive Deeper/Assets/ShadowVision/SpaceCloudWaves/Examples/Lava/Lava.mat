@@ -118,7 +118,7 @@ Material:
     m_Floats:
     - _AlphaClip: 0
     - _AlphaClipThreshold: 0.01
-    - _AlphaDensity: 3
+    - _AlphaDensity: 2
     - _BUILTIN_QueueControl: -1
     - _BUILTIN_QueueOffset: 0
     - _Blend: 0
@@ -130,23 +130,23 @@ Material:
     - _DensityFactor: 9.64
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _DiffuseDistanceFalloff: 274.36
+    - _DiffuseDistanceFalloff: 56.3
     - _DiffuseScrollSpeed: 5
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _FadeDistance: 1681
+    - _FadeDistance: 1500
     - _FadeTransition: 50
     - _FogDensity: 100
     - _FogDistance: 100000
     - _FogDistortionMagnitude: 17.25
-    - _FogHeightPower: 500
+    - _FogHeightPower: 187
     - _FogScrollSpeed: 0.1
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _HighlightDistortionMagnitude: 0
     - _HighlightHeightPower: 0
-    - _HighlightNormalStrength: 6.7
+    - _HighlightNormalStrength: 3.6
     - _MaxHeight: 50
     - _Metallic: 0
     - _NormalStrength: 2.75
@@ -155,7 +155,7 @@ Material:
     - _OffsetScale: 0.01
     - _OffsetSpeed: 0.05
     - _OffsetStrength: 1
-    - _ParalaxOffset: -78
+    - _ParalaxOffset: 1
     - _Parallax: 0.005
     - _ParallaxNormalStrength: 0
     - _QueueControl: 0
@@ -169,7 +169,7 @@ Material:
     - _StarsDistance: 140
     - _Surface: 0
     - _WaveDistance: 0.05
-    - _WaveMaxHeight: 1
+    - _WaveMaxHeight: 0.2
     - _WaveSpeed: 1
     - _WaveStrength: 0.5
     - _WorkflowMode: 1
@@ -179,9 +179,9 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FogColor: {r: 0.5019608, g: 0.03781437, b: 0, a: 0}
-    - _HighlightColor: {r: 0.5019608, g: 0.15503377, b: 0, a: 0}
-    - _MainColor: {r: 2.9960785, g: 0.09411765, b: 0, a: 0.09803922}
+    - _FogColor: {r: 1.0039216, g: 0.078431375, b: 0, a: 0}
+    - _HighlightColor: {r: 0.5019608, g: 0.4242375, b: 0, a: 0}
+    - _MainColor: {r: 23.968628, g: 0.7529412, b: 0, a: 0.09803922}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &5813234077056735459
