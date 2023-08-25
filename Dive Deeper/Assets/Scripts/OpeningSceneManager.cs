@@ -19,11 +19,22 @@ public class OpeningSceneManager : MonoBehaviour
     public float durationBeforeDialog = 3f;
     public AudioClip endingClip;
     public Image talkerImage;
+    bool canSkip;
+    Coroutine dialogCoroutine;
 
     void Start()
     {
         audioSource.volume = AudioManager.Instance.SoundVolume;
-        StartCoroutine(StartDialog());
+        dialogCoroutine = StartCoroutine(StartDialog());
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && canSkip)
+        {
+            StopCoroutine(dialogCoroutine);
+            StartCoroutine(Ending());
+        }    
     }
 
     IEnumerator StartDialog()
@@ -33,6 +44,7 @@ public class OpeningSceneManager : MonoBehaviour
         eyesAnimator.enabled = true;
         yield return new WaitForSeconds(durationBeforeDialog);
         textParent.SetActive(true);
+        canSkip = true;
         foreach (Dialog dialog in dialogs)
         {
             talkerImage.sprite = dialog.talkerImage;
@@ -44,11 +56,18 @@ public class OpeningSceneManager : MonoBehaviour
             }
             yield return new WaitForSeconds(dialog.duration);
         }
+        StartCoroutine(Ending());
+    }
+
+    IEnumerator Ending()
+    {
+        canSkip = false;
+        textParent.SetActive(false);
         reverseEyes.SetActive(true);
         yield return new WaitForSeconds(1.4f);
         AudioManager.Instance.PlayClipAtPoint(endingClip, transform.position);
         yield return new WaitForSeconds(endDuration);
-        SceneManager.LoadScene("Level 1");
+        SceneManager.LoadScene("Map 1");
     }
 }
 

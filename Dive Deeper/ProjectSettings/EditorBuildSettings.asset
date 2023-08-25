@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/OpeningScene.unity
     guid: 52b22f28c55b2684e9517c2f117dd2cd
   - enabled: 1
-    path: Assets/Scenes/Emir/Level 1.unity
-    guid: d2f7ad6d5df44194ba3509df89858f61
+    path: Assets/Scenes/Emir/Map 1.unity
+    guid: 6fd6517b1a46cad498ea20271713066b
   m_configObjects: {}

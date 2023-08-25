@@ -308,8 +308,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: presents
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2851,6 +2851,141 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 421508625244793796, guid: 4e6fb111033181345b1611a72fc66221, type: 3}
+--- !u!1 &478797029
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 478797030}
+  - component: {fileID: 478797032}
+  - component: {fileID: 478797031}
+  m_Layer: 5
+  m_Name: spaceToSkip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &478797030
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478797029}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 57323881}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -200, y: 0}
+  m_SizeDelta: {x: 600, y: 50}
+  m_Pivot: {x: 1, y: 0}
+--- !u!114 &478797031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478797029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Press Space To Skip
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 1140850687
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0.2627451}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 4
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &478797032
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478797029}
+  m_CullTransparentMesh: 1
 --- !u!1 &478934640
 GameObject:
   m_ObjectHideFlags: 0
@@ -4176,72 +4311,77 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogs:
   - talkerImage: {fileID: 21300000, guid: 1c63104b0d50b254187190df366512f4, type: 3}
-    dialogText: "Hey sen, sonunda uyand\u0131n. Bak durumun karma\u015F\u0131k oldu\u011Funun
-      fark\u0131nday\u0131m ama anlamak zorundas\u0131n..."
+    dialogText: Hey you, you're finally awake. Look, I know it's complicated, but
+      you have to understand...
     dialogSound: {fileID: 0}
-    duration: 5
+    duration: 8
   - talkerImage: {fileID: 21300000, guid: ab07418b848d3704ba71a915c19907d3, type: 3}
-    dialogText: Neredeyim ben? Sen de kimsin?
+    dialogText: Where am I? Who are you?
     dialogSound: {fileID: 0}
-    duration: 4
+    duration: 3
   - talkerImage: {fileID: 21300000, guid: 1c63104b0d50b254187190df366512f4, type: 3}
-    dialogText: "Nas\u0131l yani.. Hi\xE7 bir \u015Fey hat\u0131rlam\u0131yor olamazs\u0131n.
-      Ahh aman tanr\u0131m... Neyse \u015Fimdi beni dikkatli dinle..."
+    dialogText: What do you mean.. You can't  remember anything. Oh my God... Anyway,
+      now listen to me carefully...
     dialogSound: {fileID: 0}
-    duration: 4
+    duration: 6.5
   - talkerImage: {fileID: 21300000, guid: ab07418b848d3704ba71a915c19907d3, type: 3}
-    dialogText: "Seni lanet olas\u0131. Bana ne yapacaks\u0131n?"
+    dialogText: You fucking asshole. What are you going to do to me?
     dialogSound: {fileID: 0}
-    duration: 2.5
+    duration: 3
   - talkerImage: {fileID: 21300000, guid: 1c63104b0d50b254187190df366512f4, type: 3}
-    dialogText: "Bak dostum hi\xE7 bir \u015Fey hat\u0131rlam\u0131yor olman benim
-      su\xE7um de\u011Fil bu i\u015Fi kendin istedin. R\xFCyalarla u\u011Fra\u015Fmay\u0131
-      sen istedin.. Ben sadece sana yard\u0131mc\u0131 olmaya \xE7al\u0131\u015F\u0131yorum."
-    dialogSound: {fileID: 0}
-    duration: 8
-  - talkerImage: {fileID: 21300000, guid: 1c63104b0d50b254187190df366512f4, type: 3}
-    dialogText: "Bir \xF6nceki dal\u0131\u015F\u0131ndan beri yakla\u015F\u0131k
-      18 saat ge\xE7ti ve bu s\xFCre boyunca bayg\u0131nd\u0131n. Seni canl\u0131
-      tutmak epey zor oldu Burker. \u015Eimdi son bir kez daha dal\u0131\u015Fa ge\xE7men
-      gerek. Hedefimize hi\xE7 olamd\u0131\u011F\u0131m\u0131z kadar yak\u0131n\u0131z."
+    dialogText: Look, my friend, it's not my fault that you don't remember anything,
+      you wanted to do this yourself. You wanted to deal with dreams... I'm just
+      trying to help you.
     dialogSound: {fileID: 0}
     duration: 8
   - talkerImage: {fileID: 21300000, guid: 1c63104b0d50b254187190df366512f4, type: 3}
-    dialogText: "Her seferinde tekrar tekrar anlatmama gerek var m\u0131 bilmiyorum
-      ama, \u015Fu an hi\xE7 bir \u015Fey hat\u0131rlam\u0131yor olman\u0131 hesaba
-      katarsak san\u0131r\u0131m bu senin yarar\u0131na olur."
+    dialogText: It's been about 18 hours since your last dive and you were unconscious
+      the whole time. It was hard to keep you alive, Burker. Now you need to take
+      one last dive. We are closer to our target than we have ever been.
     dialogSound: {fileID: 0}
     duration: 8
   - talkerImage: {fileID: 21300000, guid: 1c63104b0d50b254187190df366512f4, type: 3}
-    dialogText: "Bak dostum insanlar\u0131n kafalar\u0131n\u0131n i\xE7iyle u\u011Fra\u015Fmak
-      tehlikeli bir i\u015Ftir. Sen de bu tehlikenin tam ortas\u0131na gidiyorsun.
-      Yandaki masada yatan adam Fes Askeri Cuntas\u0131'n\u0131n Strateji Koordinat\xF6r\xFC.
-      Bu adam\u0131 yakalamak bize pahala\u0131ya patlad\u0131."
+    dialogText: I don't know if I need to explain it over and over again, but considering
+      you don't remember anything right now, I think it's in your best interest.
+    dialogSound: {fileID: 0}
+    duration: 8
+  - talkerImage: {fileID: 21300000, guid: ab07418b848d3704ba71a915c19907d3, type: 3}
+    dialogText: (Coughs)
+    dialogSound: {fileID: 0}
+    duration: 1.5
+  - talkerImage: {fileID: 21300000, guid: 1c63104b0d50b254187190df366512f4, type: 3}
+    dialogText: Look, my friend, it is a dangerous business to mess with the inside
+      of people's heads.And you are right in the middle of that danger. The man on
+      the next table is the Strategy Coordinator of the Fes Military Junta.It cost
+      us a lot to catch this guy.
     dialogSound: {fileID: 0}
     duration: 8
   - talkerImage: {fileID: 21300000, guid: 1c63104b0d50b254187190df366512f4, type: 3}
-    dialogText: "Senden yapman\u0131 istedi\u011Fim \u015Fey asl\u0131nda senin de
-      yapmay\u0131 \xE7ok iyi bildi\u011Fin bir i\u015F. Adam\u0131n kafas\u0131n\u0131n
-      i\xE7ine gir ve askeri cuntan\u0131n bize kar\u015F\u0131 olan t\xFCm planlar\u0131n\u0131
-      \xF6\u011Fren. Olduk\xE7a basit bir g\xF6rev de\u011Fil mi.."
+    dialogText: What I want you to do is something you know how to do very well.
+      Get inside his head and find out all the plans of the military Junta against
+      us.It's quite a simple task, isn't it...
     dialogSound: {fileID: 0}
     duration: 8
   - talkerImage: {fileID: 21300000, guid: 1c63104b0d50b254187190df366512f4, type: 3}
-    dialogText: "Adam\u0131n kafas\u0131n\u0131n i\xE7inde ne arayaca\u011F\u0131na
-      gelirsek. Ben buna Mind Juice diyorum. Arad\u0131\u011F\u0131n \u015Fey, beynin
-      insan r\xFCya g\xF6r\xFCrken en etkin k\u0131sm\u0131 olan dorsolateral prefrontal
-      korteksindeki ba\u011Flant\u0131 noktalar\u0131nda yo\u011Funlukta oluyor.
-      Yani seni asl\u0131nda adam\u0131n r\xFCyalar\u0131na ve an\u0131lar\u0131na
-      yollayaca\u011F\u0131m da denilebilir. \u015Eimdi seni dal\u0131\u015Fa ge\xE7iriyorum."
+    dialogText: As for what to look for inside the man's head.What you are looking
+      for is concentrated in the connection points in the dorsolateral prefrontal
+      cortex, the most active part of the brain when a person is dreaming.
     dialogSound: {fileID: 0}
     duration: 8
   - talkerImage: {fileID: 21300000, guid: 1c63104b0d50b254187190df366512f4, type: 3}
-    dialogText: " Dal\u0131\u015Fa ge\xE7meden \xF6nce bilmen gereken son bir \u015Fey
-      daha var. \u0130nsan\u0131n kafas\u0131n\u0131n i\xE7i anla\u015F\u0131lmas\u0131
-      g\xFC\xE7 karma\u015F\u0131kl\u0131k ve tehlikelerle doludur, orada her ne
-      g\xF6r\xFCrsen g\xF6r hedefinden \u015Fa\u015Fma. Sen, dostum Burker, bu tehlikeleri
-      defetmekte en etkilimiz oldu\u011Fun i\xE7in buradas\u0131n. T\xFCm sendika
-      sana g\xFCveniyor, bol \u015Fanslar."
+    dialogText: So I'm actually going to send you into his dreams and memories. Now
+      I'm going to put you in a dive.
+    dialogSound: {fileID: 0}
+    duration: 8
+  - talkerImage: {fileID: 21300000, guid: 1c63104b0d50b254187190df366512f4, type: 3}
+    dialogText: There is one last thing you need to know before we dive in. The inside
+      of the human head is full of complexities and dangers that are difficult to
+      understand, so whatever you see there, stay on target.
+    dialogSound: {fileID: 0}
+    duration: 8
+  - talkerImage: {fileID: 21300000, guid: 1c63104b0d50b254187190df366512f4, type: 3}
+    dialogText: You, my friend Burker, are here because you are our most effective
+      in warding off these dangers.The whole syndicate is counting on you, good luck.
     dialogSound: {fileID: 0}
     duration: 8
   audioSource: {fileID: 5866666021025637349}
@@ -5676,10 +5816,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Emircan \u0130san\xE7\n\nYakup Ekinci"
+  m_text: "Emircan \u0130sanc\n\nYakup Ekinci"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7585,8 +7725,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: The Game Name
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

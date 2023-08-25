@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class GameManager : Singleton<GameManager>
 {
-    public GameObject doorToClose;
+    public GameObject doorToMove;
+    public float doorTargetY;
 
     [Header("TALK BUBBLE")]
     public bool talkAtStart;
@@ -81,7 +83,7 @@ public class GameManager : Singleton<GameManager>
 
     public void StartPhaseTwo()
     {
-        doorToClose.SetActive(false);
+        doorToMove.transform.DOMoveY(doorTargetY, 2f);
     }
 
     public void WinGame()
