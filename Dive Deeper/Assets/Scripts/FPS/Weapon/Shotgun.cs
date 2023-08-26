@@ -27,7 +27,16 @@ public class Shotgun : GunBase
     {
         base.OnEnable();
         if (InGameUI.Instance)
+        {
             InGameUI.Instance.SetGreandeUI(false);
+        }
+            
+    }
+
+    public override void StartReload()
+    {
+        animator.SetTrigger("Reload");
+        base.StartReload();
     }
 
     public override bool HandleFire(Transform cam)
@@ -50,6 +59,7 @@ public class Shotgun : GunBase
             OnFire?.Invoke();
             audioSource.PlayOneShot(fireClips.RandomAudioClip);
             ReduceAmmo();
+            animator.SetTrigger("Fire");
             if (!muzzle.activeSelf)
             {
                 StartCoroutine(HandleMuzzle());

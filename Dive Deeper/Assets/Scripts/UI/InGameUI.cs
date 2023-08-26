@@ -13,12 +13,9 @@ public class InGameUI : Singleton<InGameUI>
     [SerializeField] TextMeshProUGUI bulletTMP;
     [SerializeField] TextMeshProUGUI maxBulletTMP;
     [SerializeField] TextMeshProUGUI bombTMP;
-    [SerializeField] TextMeshProUGUI maxBombTMP;
     [SerializeField] GameObject reloadBarParent;
     [SerializeField] Image reloadBar;
     [SerializeField] Image healthBar;
-    [SerializeField] TextMeshProUGUI healthTMP;
-    [SerializeField] TextMeshProUGUI maxHealthTMP;
 
     [SerializeField] GameObject grenadePanel;
     [SerializeField] TextMeshProUGUI grenadeTMP;
@@ -59,7 +56,6 @@ public class InGameUI : Singleton<InGameUI>
         WeaponHandler.Instance.OnWeaponSwitched += UpdateListeners;
 
         UpdateHealth(health.Value);
-        UpdateMaxHealth(maxHealth.Value);
     }
 
     public void OnContinueBtnPressed()
@@ -210,21 +206,10 @@ public class InGameUI : Singleton<InGameUI>
         bombTMP.SetText(value.ToString());
     }
 
-    private void UpdateMaxBomb(int value)
-    {
-        maxBombTMP.SetText(value.ToString());
-    }
-
-
-    private void UpdateMaxHealth(float value)
-    {
-        maxHealthTMP.SetText(value.ToString());
-    }
 
     private void UpdateHealth(float value)
     {
         healthBar.fillAmount = value / maxHealth.Value;
-        healthTMP.SetText(value.ToString());
     }
 
     private void UpdateReloadBar(float value)

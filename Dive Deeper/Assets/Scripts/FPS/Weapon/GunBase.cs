@@ -5,6 +5,7 @@ using System.Linq;
 [RequireComponent(typeof(AudioSource))]
 public class GunBase : WeaponBaseAbstract, IBackfireable
 {
+    protected Animator animator;
     [SerializeField] protected AudioClipsSO fireClips;
     [SerializeField] protected AudioClipsSO reloadClips;
     [SerializeField] protected GameObject muzzle;
@@ -32,6 +33,11 @@ public class GunBase : WeaponBaseAbstract, IBackfireable
     protected float sprayAmount;
     public float SprayAmount { get => sprayAmount; set { sprayAmount = value * sprayMultiplier; } }
 
+
+    protected virtual void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     protected override void Start()
     {
@@ -64,9 +70,13 @@ public class GunBase : WeaponBaseAbstract, IBackfireable
         muzzle.SetActive(false);
     }
 
-    private void OnDisable() {
+    protected override void OnDisable() {
+        base.OnDisable();
         if (muzzle != null)
+        {
             muzzle.SetActive(false);
+        }
+            
     }
 
     public override bool HandleFire(Transform cam)
