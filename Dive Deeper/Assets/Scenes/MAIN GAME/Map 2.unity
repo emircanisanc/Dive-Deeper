@@ -11459,7 +11459,7 @@ PrefabInstance:
     - target: {fileID: 2555592145897762151, guid: 3586cab086fb0f64f84c00dd84afd2a4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2555592145897762151, guid: 3586cab086fb0f64f84c00dd84afd2a4,
         type: 3}
@@ -27025,7 +27025,7 @@ PrefabInstance:
     - target: {fileID: 7317870352244341265, guid: 2487c54963f164f4a81838c22afeca61,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7317870352244341265, guid: 2487c54963f164f4a81838c22afeca61,
         type: 3}
@@ -31577,7 +31577,7 @@ PrefabInstance:
     - target: {fileID: 9001611004813789690, guid: 95f8af9d672aa034db19bf032d3481b9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9001611004813789690, guid: 95f8af9d672aa034db19bf032d3481b9,
         type: 3}
@@ -36315,8 +36315,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefabs:
-  - {fileID: 5126431612162892746, guid: 1e0fb85f0f52f1a4f88f38e0cfafa447, type: 3}
-  - {fileID: 5126431612162892746, guid: 2ffa5c2fe8f0342408cce7f86b35941c, type: 3}
+  - {fileID: 309916723024243282, guid: f84f299114bdf5f418e4c43c3cee4ff2, type: 3}
+  - {fileID: 3695196886565177093, guid: d9adbdffbcc3db64cb74038a4399a878, type: 3}
+  - {fileID: 1571319194713851084, guid: 67ce67ff006903e46992107365264a9f, type: 3}
+  - {fileID: 6669669536981132645, guid: 8f14e2c8c6307d04aac8d1540f2c526b, type: 3}
+  - {fileID: 610647792813961433, guid: a051e48cf302e6c4c9a8255d1c85a7ab, type: 3}
+  - {fileID: 2721641380259724506, guid: 619962005b742a44d9033a44000dfd9f, type: 3}
+  - {fileID: 3924026662102271667, guid: 89451b0b3699fe042916924d8f58161d, type: 3}
   enemySpawnPoints:
   - {fileID: 1003534351}
   - {fileID: 1084743459}
@@ -36325,7 +36330,7 @@ MonoBehaviour:
   - {fileID: 1247161164}
   - {fileID: 2125294223}
   totalTime: 120
-  maxEnemyAlive: 25
+  maxEnemyAlive: 7
 --- !u!23 &1653749106
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -45559,7 +45564,7 @@ Transform:
   m_Children:
   - {fileID: 8567126481542608852}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &61485106100671518
 MonoBehaviour:
