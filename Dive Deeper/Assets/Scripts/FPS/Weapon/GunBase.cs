@@ -64,6 +64,10 @@ public class GunBase : WeaponBaseAbstract, IBackfireable
         muzzle.SetActive(false);
     }
 
+    private void OnDisable() {
+        if (muzzle != null)
+            muzzle.SetActive(false);
+    }
 
     public override bool HandleFire(Transform cam)
     {

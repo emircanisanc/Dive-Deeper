@@ -53,6 +53,13 @@ public class GameManager : Singleton<GameManager>
             audioSource.Play();
         }
 
+        Invoke(nameof(SetObjectiveAtStart), 1f);
+
+    }
+
+    private void SetObjectiveAtStart()
+    {
+        Message.ShowMessageInstance("SURVIVE AND FIND THE MIND JUICE");
     }
 
     private void ChangeSoundVolume(float value)
@@ -87,6 +94,7 @@ public class GameManager : Singleton<GameManager>
     public void StartPhaseTwo()
     {
         doorToMove.transform.DOMoveY(doorTargetY, 2f);
+        Message.ShowMessageInstance("THE DOOR IS UNLOCKED");
     }
 
     public void WinGame()
