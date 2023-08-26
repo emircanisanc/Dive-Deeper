@@ -91,7 +91,12 @@ public class GameManager : Singleton<GameManager>
         audioSource.Play();
     }
 
-    public void StartPhaseTwo()
+    public virtual void StartPhaseTwo()
+    {
+        OpenDoor();
+    }
+
+    public void OpenDoor()
     {
         doorToMove.transform.DOMoveY(doorTargetY, 2f);
         Message.ShowMessageInstance("THE DOOR IS UNLOCKED");

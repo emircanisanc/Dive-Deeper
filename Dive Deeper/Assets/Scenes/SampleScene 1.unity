@@ -276,7 +276,7 @@ MonoBehaviour:
   - {fileID: 1663103462}
   - {fileID: 725984437}
   totalTime: 20
-  maxEnemyAlive: 5
+  maxEnemyAlive: 0
 --- !u!1 &374033270
 GameObject:
   m_ObjectHideFlags: 0
@@ -1141,7 +1141,7 @@ PrefabInstance:
     - target: {fileID: 2555592145897762151, guid: 3586cab086fb0f64f84c00dd84afd2a4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.98
+      value: 2.93
       objectReference: {fileID: 0}
     - target: {fileID: 2555592145897762151, guid: 3586cab086fb0f64f84c00dd84afd2a4,
         type: 3}
@@ -1151,7 +1151,7 @@ PrefabInstance:
     - target: {fileID: 2555592145897762151, guid: 3586cab086fb0f64f84c00dd84afd2a4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -26.81
+      value: -32.21
       objectReference: {fileID: 0}
     - target: {fileID: 2555592145897762151, guid: 3586cab086fb0f64f84c00dd84afd2a4,
         type: 3}
@@ -2893,6 +2893,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mind Juice
+      objectReference: {fileID: 0}
+    - target: {fileID: 61485104701166955, guid: 3fe56e31b798025439d4ca5202541d6e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fe56e31b798025439d4ca5202541d6e, type: 3}
