@@ -20,8 +20,14 @@ public class PlayerHealth : Singleton<PlayerHealth>, IDamageable
     {
         audioSource = GetComponent<AudioSource>();
         health.Value = maxHealth.Value;
+        AudioManager.Instance.OnSoundVolumeChanged += ChangeSoundVolume;
+        audioSource.volume = AudioManager.Instance.SoundVolume;
     }
 
+    private void ChangeSoundVolume(float value)
+    {
+        audioSource.volume = value;
+    }
     public void ApplyDamage(float damage)
     {
         health.Value = Mathf.Max(health.Value - damage, 0);

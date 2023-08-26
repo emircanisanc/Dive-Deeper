@@ -19,13 +19,14 @@ public abstract class EnemyBaseAbstract : MonoBehaviour, IDamageable, IHitable
     protected NavMeshAgent agent;
     protected Animator animator;
     protected static Transform player;
-    private Vector3 playerPos;
+    protected Vector3 playerPos;
     protected float nextAttackTime;
     protected bool isAttacking;
     protected bool canMove;
     protected bool isDead;
     protected float moveSpeed;
     protected float currentHealth;
+    public bool autoActivate;
 
     protected virtual void Awake()
     {
@@ -34,7 +35,7 @@ public abstract class EnemyBaseAbstract : MonoBehaviour, IDamageable, IHitable
         animator = GetComponentInChildren<Animator>();
         moveSpeed = agent.speed;
     }
-    void Start()
+    protected virtual void Start()
     {
         currentHealth = maxHealth;
         coll.enabled = true;
@@ -44,6 +45,8 @@ public abstract class EnemyBaseAbstract : MonoBehaviour, IDamageable, IHitable
         {
             player = PlayerHealth.Instance.transform;
         }
+        if (autoActivate)
+            SetPlayer();
     }
 
     void Update()
@@ -120,7 +123,7 @@ public abstract class EnemyBaseAbstract : MonoBehaviour, IDamageable, IHitable
     {
         Destroy(gameObject);
     }
-    private void FaceTarget()
+    protected void FaceTarget()
     {
         Vector3 dir = (playerPos - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(dir.x, 0, dir.z));
