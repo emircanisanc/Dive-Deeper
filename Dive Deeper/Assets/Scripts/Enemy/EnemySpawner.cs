@@ -16,15 +16,20 @@ public class EnemySpawner : Singleton<EnemySpawner>
         base.Awake();
         //liveEnemyCount = FindObjectsOfType<EnemyBaseAbstract>().Length;
         liveEnemyCount = 0;
-        StartCoroutine(TimerCoroutine());
+    }
+
+    void Start() {
+        StartCoroutine(TimerCoroutine());    
     }
 
     IEnumerator TimerCoroutine()
     {
+        InGameUI.Instance.SetTimerText(totalTime);
         while (totalTime > 0)
         {
             yield return new WaitForSeconds(1f);
             totalTime--;
+            InGameUI.Instance.SetTimerText(totalTime);
 
             // Spawn enemies if the maximum number of enemies is not reached
             if (liveEnemyCount < maxEnemyAlive)

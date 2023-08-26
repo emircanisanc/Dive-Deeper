@@ -8,6 +8,7 @@ public class Necromancer : MeleeEnemy
 {
     AudioSource audioSource;
 
+    public string bossName = "NECROMANCER";
     public GameObject spawnOnDeath;
     public float spawnDeltaY = 1f;
 
@@ -42,6 +43,7 @@ public class Necromancer : MeleeEnemy
         audioSource.volume = AudioManager.Instance.SoundVolume;
     }
 
+
     void OnDestroy()
     {
         if (AudioManager.Instance)
@@ -63,6 +65,14 @@ public class Necromancer : MeleeEnemy
         nextSpawnTime = Time.time + spawnSkeletonDuration;
         nextThrowTime = Time.time + projectileThrowDuration;
         startLocalPos = projectileTrigger.transform.localPosition;
+
+        InGameUI.Instance.OpenBossHealthBar(bossName);
+    }
+
+    public override void ApplyDamage(float damage)
+    {
+        base.ApplyDamage(damage);
+        InGameUI.Instance.SetPercentOfHealthBar(currentHealth / maxHealth);
     }
 
     public override void UpdateMethod()
@@ -112,7 +122,7 @@ public class Necromancer : MeleeEnemy
         throwSequence.Append(transform.DOScale(transform.localScale, 0.58f).OnComplete(() => PlayClip(throwClip)));
         throwSequence.Append(projectileTrigger.transform.DOLocalMove(projectileTargetPos.localPosition, 0.46f).SetEase(Ease.Linear));
         throwSequence.Append(transform.DOScale(transform.localScale, 2.47f));
-        throwSequence.Append(projectileTrigger.transform.DOLocalMove(startLocalPos, 0.6f).SetEase(Ease.Linear));
+        throwSequence.Append(projectileTrigger.transform.DOLocalMove(startLocalPos, 0.5f).SetEase(Ease.Linear));
         throwSequence.OnComplete(() => StopThrowing());
     }
 
@@ -126,6 +136,7 @@ public class Necromancer : MeleeEnemy
         nextThrowTime = Time.time + projectileThrowDuration;
         projectileTrigger.enabled = false;
         isAttacking = false;
+        StartMove();
     }
 
     IEnumerator SpawnSkeletonCoroutine()
