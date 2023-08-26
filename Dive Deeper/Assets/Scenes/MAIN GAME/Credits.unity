@@ -1085,9 +1085,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "CREATOR: Emircan \u0131Sanc & Yakup EkINCI\n\nMUSIC: DORUK SEZGIN SERT\n\nVOCALIZATION:
-    mertin arkada\u015F\u0131\n\n\n\nSPECIAL THANKS\n\nMert Uzakgoren\nBERKE AYDIN\nBatuhan
-    Ipek\nNURI onacak\nHILMI GUNER"
+  m_text: "CREATOR: Emircan \u0131Sanc & Yakup EkINCI\n\nLEVEL DESIGNER: NURI ONACAK\n\nMUSIC:
+    DORUK SEZGIN SERT\n\nVOCALIZATION: BATUHAN KARA\n\n\n\nSPECIAL THANKS\n\nMert
+    Uzakgoren\nBERKE AYDIN\nBatuhan Ipek\nHILMI GUNER\nOMER YIRMIBES"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
