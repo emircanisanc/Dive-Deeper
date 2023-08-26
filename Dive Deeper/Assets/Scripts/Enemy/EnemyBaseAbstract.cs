@@ -130,7 +130,7 @@ public abstract class EnemyBaseAbstract : MonoBehaviour, IDamageable, IHitable
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10f);
     }
 
-    public void ApplyDamage(float damage)
+    public virtual void ApplyDamage(float damage)
     {
         currentHealth -= damage;
 

@@ -8,6 +8,12 @@ using UnityEngine.SceneManagement;
 
 public class InGameUI : Singleton<InGameUI>
 {
+    [SerializeField] TextMeshProUGUI timerTMP;
+    [SerializeField] TextMeshProUGUI bossNameTMP;
+    [SerializeField] Image bossHealthBarImage;
+    [SerializeField] GameObject bossHealthBarParent;
+
+
     [SerializeField] Float health;
     [SerializeField] Float maxHealth;
     [SerializeField] TextMeshProUGUI bulletTMP;
@@ -37,6 +43,38 @@ public class InGameUI : Singleton<InGameUI>
     public Action<float> OnSensitivityChanged;
     public string nextLevelName = "Map 2";
     float sensitivity;
+
+
+    public void SetTimerText(int timer)
+    {
+        if (timer == 0)
+        {
+            timerTMP.gameObject.SetActive(false);
+        }
+        else
+        {
+            timerTMP.SetText(timer.ToString());
+        }
+    }
+
+    public void OpenBossHealthBar(string bossName)
+    {
+        bossNameTMP.SetText(bossName);
+        bossHealthBarImage.fillAmount = 1f;
+        bossHealthBarParent.SetActive(true);
+    }
+
+    public void SetPercentOfHealthBar(float value)
+    {
+        if (value <= 0)
+        {
+            bossHealthBarParent.SetActive(false);
+        }
+        else
+        {
+            bossHealthBarImage.fillAmount = value;
+        }
+    }
 
     void Start()
     {

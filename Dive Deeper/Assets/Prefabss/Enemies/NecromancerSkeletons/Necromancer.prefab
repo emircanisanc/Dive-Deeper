@@ -22101,7 +22101,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1.5
+  m_Speed: 2.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -22155,16 +22155,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf0b2ae34da78fb428b377e2aca15903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1000
+  maxHealth: 3000
   attackRange: 3
   attackRate: 1.1
-  attackDamage: 10
+  attackDamage: 30
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
   attackOriginTransform: {fileID: 4357160001049672386}
   attackAnimCount: 1
   autoActivate: 1
+  bossName: NECROMANCER
   spawnOnDeath: {fileID: 666924188320528834, guid: 40d2c9e293181c24d9f562ecc1848975,
     type: 3}
   spawnDeltaY: 1

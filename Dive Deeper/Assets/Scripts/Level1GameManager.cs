@@ -9,7 +9,11 @@ public class Level1GameManager : GameManager
 
     public override void StartPhaseTwo()
     {
-        Message.ShowMessageInstance("KILL THE BOSS");
+        if (!phaseOne)
+            return;
+        
+        phaseOne = false;
+        ImportantMessager.Instance.ShowMessage("KILL THE BOSS");
         doorToClose.SetActive(false);
         bossEnemy.SetActive(true);
     }

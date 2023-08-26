@@ -21,6 +21,7 @@ public class GameManager : Singleton<GameManager>
     public AudioSource audioSource;
     public bool canPauseGame { get; set; } = true;
 
+    protected bool phaseOne = true;
     public Action OnGameEnd;
 
     bool isGameEnd;
@@ -54,12 +55,11 @@ public class GameManager : Singleton<GameManager>
         }
 
         Invoke(nameof(SetObjectiveAtStart), 1f);
-
     }
 
     private void SetObjectiveAtStart()
     {
-        Message.ShowMessageInstance("SURVIVE AND FIND THE MIND JUICE");
+        ImportantMessager.Instance.ShowMessage("SURVIVE AND FIND THE MIND JUICE");
     }
 
     private void ChangeSoundVolume(float value)
@@ -93,13 +93,17 @@ public class GameManager : Singleton<GameManager>
 
     public virtual void StartPhaseTwo()
     {
+        if (!phaseOne)
+            return;
+
+        phaseOne = false;
         OpenDoor();
     }
 
     public void OpenDoor()
     {
         doorToMove.transform.DOMoveY(doorTargetY, 2f);
-        Message.ShowMessageInstance("THE DOOR IS UNLOCKED");
+        ImportantMessager.Instance.ShowMessage("THE DOOR IS UNLOCKED COLLECT THE JUICE");
     }
 
     public void WinGame()
