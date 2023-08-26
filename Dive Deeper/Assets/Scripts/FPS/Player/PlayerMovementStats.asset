@@ -1,18 +1,3 @@
-%YAML 1.1
-%TAG !u! tag:unity3d.com,2011:
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05a5bbe978fad034b9dabdcaed85449d, type: 3}
-  m_Name: PlayerMovementStats
-  m_EditorClassIdentifier: 
-  moveSpeed: 9.5
-  gravity: -20
-  jumpHeight: 1.25
-  airControl: 1
+version https://git-lfs.github.com/spec/v1
+oid sha256:b9f31e4dbdc4be3e87bf5dfbe21815f66192c6656201ccd76aeae1be15728392
+size 493
