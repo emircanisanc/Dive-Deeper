@@ -54,7 +54,7 @@ public abstract class EnemyBaseAbstract : MonoBehaviour, IDamageable, IHitable
         UpdateMethod();    
     }
 
-    public void SetPlayer()
+    public virtual void SetPlayer()
     {
         enabled = true;
         StartChasing();

@@ -14,7 +14,10 @@ public class Level1GameManager : GameManager
         
         phaseOne = false;
         ImportantMessager.Instance.ShowMessage("KILL THE BOSS");
-        doorToClose.SetActive(false);
+        if (doorToClose)
+        {
+            doorToClose.SetActive(false);
+        }
         bossEnemy.SetActive(true);
     }
 }

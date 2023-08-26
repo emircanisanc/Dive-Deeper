@@ -1682,13 +1682,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 250
   attackRange: 3
-  attackRate: 2
+  attackRate: 0.8
   attackDamage: 7
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
   attackOriginTransform: {fileID: 2721641380691938125}
-  attackAnimCount: 3
+  attackAnimCount: 1
   autoActivate: 1
 --- !u!54 &2721641380259724509
 Rigidbody:
