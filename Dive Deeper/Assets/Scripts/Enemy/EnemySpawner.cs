@@ -51,7 +51,7 @@ public class EnemySpawner : Singleton<EnemySpawner>
         GameObject randomPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
         
         List<Transform> sortedSpawnPoints = enemySpawnPoints.OrderBy(spawnPoint => Vector3.Distance(spawnPoint.position, playerPos)).ToList();
-        Vector3 spawnPosition = sortedSpawnPoints[Random.Range(sortedSpawnPoints.Count -2, sortedSpawnPoints.Count)].position;
+        Vector3 spawnPosition = sortedSpawnPoints[Random.Range(1, sortedSpawnPoints.Count)].position;
 
         EnemyBaseAbstract enemy = Instantiate(randomPrefab, spawnPosition, Quaternion.identity).GetComponent<EnemyBaseAbstract>();
         enemy.SetPlayer();

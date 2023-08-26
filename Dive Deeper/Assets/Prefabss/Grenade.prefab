@@ -340,4 +340,4 @@ MonoBehaviour:
   damage: 250
   targetLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 1152

@@ -41,6 +41,10 @@ public class Grenade : MonoBehaviour
                 float netDamage = Mathf.Lerp(0, damage, explosionRadius - Mathf.Clamp(distance, 0, explosionRadius));
                 damageable.ApplyDamage(netDamage);
             }
+            else if (hit.TryGetComponent<ToggleOnDamage>(out var box))
+            {
+                box.ApplyDamage(damage);
+            }
         }
         Instantiate(explosionParticlePrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);

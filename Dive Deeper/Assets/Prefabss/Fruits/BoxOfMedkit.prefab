@@ -231,7 +231,7 @@ GameObject:
   - component: {fileID: 3287178672306084784}
   - component: {fileID: 3287178672306084786}
   - component: {fileID: 3287178672306084785}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: BoxOfMedkit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11529,6 +11529,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6506620174839391757, guid: e30dfa76f4c5610449fb251b7b92913d,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6506620174839391757, guid: e30dfa76f4c5610449fb251b7b92913d,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6506620174839391757, guid: e30dfa76f4c5610449fb251b7b92913d,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6506620174839391757, guid: e30dfa76f4c5610449fb251b7b92913d,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -11575,6 +11590,11 @@ PrefabInstance:
     - target: {fileID: 6506620174839391757, guid: e30dfa76f4c5610449fb251b7b92913d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6506620174839391757, guid: e30dfa76f4c5610449fb251b7b92913d,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -10,7 +10,7 @@ public class Shotgun : GunBase
     protected override void Start()
     {
         base.Start();
-        InGameUI.Instance.SetGreandeUI(false); 
+        InGameUI.Instance.SetGreandeUI(false);
     }
 
     public override void HandleSecondFire(Transform cam)
@@ -27,7 +27,7 @@ public class Shotgun : GunBase
     {
         base.OnEnable();
         if (InGameUI.Instance)
-            InGameUI.Instance.SetGreandeUI(false);    
+            InGameUI.Instance.SetGreandeUI(false);
     }
 
     public override bool HandleFire(Transform cam)
@@ -50,6 +50,10 @@ public class Shotgun : GunBase
             OnFire?.Invoke();
             audioSource.PlayOneShot(fireClips.RandomAudioClip);
             ReduceAmmo();
+            if (!muzzle.activeSelf)
+            {
+                StartCoroutine(HandleMuzzle());
+            }
             OnCurrentAmmoReduced?.Invoke(currentAmmo);
             for (int i = 0; i < ammoPerShot; i++)
             {
@@ -71,7 +75,7 @@ public class Shotgun : GunBase
         float min = UnityEngine.Random.Range(0.1f, 0.2f);
         //Vector3 start = firePoint.position + dir * min;
         Transform cam = Camera.main.transform;
-        Vector3 end =firepoints[firePoint].position + firepoints[firePoint].forward * 10;
+        Vector3 end = firepoints[firePoint].position + firepoints[firePoint].forward * 10;
         var hits = Physics.RaycastAll(cam.position, firepoints[firePoint].forward, range, targetLayer);
         if (hits.Length > 0)
             end = hits[0].point;
