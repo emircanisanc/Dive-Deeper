@@ -47,7 +47,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.8
-  m_Speed: 3
+  m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 150
@@ -112,6 +112,7 @@ MonoBehaviour:
   attackAnimCount: 3
   explosionPrefab: {fileID: 636970022231831802, guid: 5a5a938120ad28c4f8a33f2befb7aa2f,
     type: 3}
+  deltaYToSpawn: 1
 --- !u!1 &3202114721138017732
 GameObject:
   m_ObjectHideFlags: 0

@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxReloadTime: 2
-  maxAmmo: 60
+  maxAmmo: 100
   clipSize: 30
   bulletType: 0
   damage: 15

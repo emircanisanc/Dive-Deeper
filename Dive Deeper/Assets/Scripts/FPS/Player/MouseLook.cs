@@ -42,15 +42,6 @@ public class MouseLook : Singleton<MouseLook>
     void Update()
     {
         MouseControl();
-        /* float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
-
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        playerBody.Rotate(Vector3.up * mouseX); */
-
     }
 
     private void MouseControl()
@@ -74,9 +65,3 @@ public class MouseLook : Singleton<MouseLook>
 
 }
 
-/* 
-Assertion failed on expression: 'CompareApproximately(SqrMagnitude(result), 1.0F)'
-UnityEngine.Quaternion:Internal_FromEulerRad (UnityEngine.Vector3)
-MouseLook:MouseControl () (at Assets/Scripts/FPS/Player/MouseLook.cs:62)
-MouseLook:Update () (at Assets/Scripts/FPS/Player/MouseLook.cs:37)
- */
