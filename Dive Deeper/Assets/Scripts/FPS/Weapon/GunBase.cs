@@ -7,6 +7,7 @@ public class GunBase : WeaponBaseAbstract, IBackfireable
 {
     [SerializeField] protected AudioClipsSO fireClips;
     [SerializeField] protected AudioClipsSO reloadClips;
+    [SerializeField] protected GameObject muzzle;
     protected AudioSource audioSource;
     [Header("Visuals")]
     // [SerializeField] private TrailRenderer trailRenderer;
@@ -56,6 +57,13 @@ public class GunBase : WeaponBaseAbstract, IBackfireable
 
     }
 
+    protected IEnumerator HandleMuzzle()
+    {
+        muzzle.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+        muzzle.SetActive(false);
+    }
+
 
     public override bool HandleFire(Transform cam)
     {
@@ -75,6 +83,11 @@ public class GunBase : WeaponBaseAbstract, IBackfireable
  */
             Vector3 dir = cam.forward + UnityEngine.Random.insideUnitSphere * sprayAmount;
             Vector3 startPos = cam.position;
+            if (!muzzle.activeSelf)
+            {
+                StartCoroutine(HandleMuzzle());
+            }
+                
             SendLine(dir); // DEBUG LINE
             FireBullet(startPos, dir);
             nextAttackTime = Time.timeSinceLevelLoad + fireRate;

@@ -5,6 +5,7 @@ using UnityEngine;
 public class LaserGun : GunBase
 {
     [SerializeField] protected AudioClipsSO fireGrenadeClips;
+    
     [SerializeField] GameObject grenadePrefab;
     [SerializeField] Transform grenadePoint;
 
@@ -43,6 +44,9 @@ public class LaserGun : GunBase
             }
         }
     }
+
+
+
 
     protected override void OnEnable()
     {

@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54187526e79eaa644a5a8419322f7bde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messageOnCollected: 'Collected: Medkit'
+  messageOnCollected: 'Collected: MEDKIT'
   healAmount: 20
 --- !u!1 &8929714738740135561
 GameObject:

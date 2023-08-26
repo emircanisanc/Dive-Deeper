@@ -563,7 +563,7 @@ GameObject:
   - component: {fileID: 485864126310498276}
   - component: {fileID: 485864126310498278}
   - component: {fileID: 485864126310498277}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: BoxOfLaserBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11519,6 +11519,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 636970022231831796, guid: 5a5a938120ad28c4f8a33f2befb7aa2f,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 636970022231831796, guid: 5a5a938120ad28c4f8a33f2befb7aa2f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 636970022231831796, guid: 5a5a938120ad28c4f8a33f2befb7aa2f,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 636970022231831796, guid: 5a5a938120ad28c4f8a33f2befb7aa2f,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -11565,6 +11580,11 @@ PrefabInstance:
     - target: {fileID: 636970022231831796, guid: 5a5a938120ad28c4f8a33f2befb7aa2f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 636970022231831796, guid: 5a5a938120ad28c4f8a33f2befb7aa2f,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 636970022231831802, guid: 5a5a938120ad28c4f8a33f2befb7aa2f,

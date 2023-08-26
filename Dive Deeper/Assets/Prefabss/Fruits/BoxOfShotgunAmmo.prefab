@@ -427,7 +427,7 @@ GameObject:
   - component: {fileID: 3646926628513563613}
   - component: {fileID: 3646926628513563615}
   - component: {fileID: 3646926628513563612}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: BoxOfShotgunAmmo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11529,6 +11529,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9075316969478219150, guid: 5f4af2a0990be6c4fab7d2d0e669b892,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9075316969478219150, guid: 5f4af2a0990be6c4fab7d2d0e669b892,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9075316969478219150, guid: 5f4af2a0990be6c4fab7d2d0e669b892,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9075316969478219150, guid: 5f4af2a0990be6c4fab7d2d0e669b892,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -11575,6 +11590,11 @@ PrefabInstance:
     - target: {fileID: 9075316969478219150, guid: 5f4af2a0990be6c4fab7d2d0e669b892,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9075316969478219150, guid: 5f4af2a0990be6c4fab7d2d0e669b892,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

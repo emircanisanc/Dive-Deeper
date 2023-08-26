@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f8191161ea1220449345209be4a1598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grenadeExplosions: {fileID: 11400000, guid: a0f4787a4f2c22a4da4fde8a9e863dfa, type: 2}
+  grenadeExplosions: {fileID: 11400000, guid: 6894fff740eae7741b4ee0bf5fea9597, type: 2}
   pickupSounds: {fileID: 11400000, guid: e6650c2b997ab1140b850de4d56bdff3, type: 2}
   creatureSounds: {fileID: 0}
   buttonClip: {fileID: 8300000, guid: 9c46d51637e534442abd180345f84948, type: 3}
-  musicClip: {fileID: 8300000, guid: bcd348002ab6ef641827fae45023d5a6, type: 3}
+  musicClip: {fileID: 8300000, guid: bedd9ce96658ccb47b44d57e6f34f1ec, type: 3}
