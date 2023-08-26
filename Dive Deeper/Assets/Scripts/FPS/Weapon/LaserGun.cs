@@ -31,10 +31,11 @@ public class LaserGun : GunBase
 
     public override void HandleSecondFire(Transform cam)
     {
-        if (grenadeAmount > 0)
+        if (grenadeAmount > 0 && !isReloading)
         {
             if (Time.time >= nextGrenadeTime && canFireGrenade)
             {
+                animator.SetTrigger("Grenade");
                 canFireGrenade = false;
                 nextGrenadeTime = Time.time + 0.3f;
                 grenadeAmount--;
@@ -43,6 +44,12 @@ public class LaserGun : GunBase
                 Instantiate(grenadePrefab, grenadePoint.position, cam.rotation);
             }
         }
+    }
+
+    public override void StartReload()
+    {
+        base.StartReload();
+        animator.SetTrigger("Reload");
     }
 
 

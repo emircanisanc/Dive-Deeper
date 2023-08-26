@@ -37,6 +37,7 @@ public class PlayerHealth : Singleton<PlayerHealth>, IDamageable
         }
         else
         {
+            DamageImage.Instance.ShowImage(damage);
             audioSource.clip = damageClips.RandomAudioClip;
             audioSource.Play();
         }

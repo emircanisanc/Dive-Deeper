@@ -50,7 +50,7 @@ public abstract class WeaponBaseAbstract : MonoBehaviour
 
     private bool isInitialized;
 
-    private void OnDisable() {
+    protected virtual void OnDisable() {
         if (isReloading)
         {
             isReloading = false;
