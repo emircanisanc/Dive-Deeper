@@ -169,7 +169,7 @@ Material:
     - _StarsDistance: 140
     - _Surface: 0
     - _WaveDistance: 0.05
-    - _WaveMaxHeight: 0.1
+    - _WaveMaxHeight: 0.05
     - _WaveSpeed: 1
     - _WaveStrength: 0.5
     - _WorkflowMode: 1
