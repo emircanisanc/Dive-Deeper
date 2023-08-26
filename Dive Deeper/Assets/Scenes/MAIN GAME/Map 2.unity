@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 152e58f40cd1ddd4cbf85bf0056bd97a,
+    type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 0262ca68b3edad64b8cad5f60b436adc,
     type: 2}
 --- !u!196 &4
@@ -123,7 +124,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 2da1227a98b7c45479ebad90e3a2c235, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 7794d50456bc7174dbd530f0214b01e5, type: 2}
 --- !u!64 &122
 MeshCollider:
   m_ObjectHideFlags: 0
