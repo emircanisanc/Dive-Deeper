@@ -1169,7 +1169,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   attackOriginTransform: {fileID: 6852936590406197056}
-  attackAnimCount: 3
+  attackAnimCount: 2
   autoActivate: 1
 --- !u!54 &6852936591040047312
 Rigidbody:

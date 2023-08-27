@@ -305,10 +305,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: emircan isanc
+  m_text: BLUE OWL
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 37ab1c1d1bbc37f4f980fff4a33d83dd, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 37ab1c1d1bbc37f4f980fff4a33d83dd, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -440,10 +440,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: emircan isanc
+  m_text: BLUE OWL
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 37ab1c1d1bbc37f4f980fff4a33d83dd, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 37ab1c1d1bbc37f4f980fff4a33d83dd, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1048,10 +1048,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: yakup ekinci
+  m_text: version 0.1.0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 37ab1c1d1bbc37f4f980fff4a33d83dd, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 37ab1c1d1bbc37f4f980fff4a33d83dd, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1461,10 +1461,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: emircan isanc
+  m_text: BLUE OWL
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 37ab1c1d1bbc37f4f980fff4a33d83dd, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 37ab1c1d1bbc37f4f980fff4a33d83dd, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3239,10 +3239,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: yakup ekinci
+  m_text: version 0.1.0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 37ab1c1d1bbc37f4f980fff4a33d83dd, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 37ab1c1d1bbc37f4f980fff4a33d83dd, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3581,10 +3581,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: yakup ekinci
+  m_text: version 0.1.0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 37ab1c1d1bbc37f4f980fff4a33d83dd, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 37ab1c1d1bbc37f4f980fff4a33d83dd, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

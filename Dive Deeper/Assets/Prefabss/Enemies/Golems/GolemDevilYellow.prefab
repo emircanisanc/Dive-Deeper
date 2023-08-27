@@ -119,7 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 250
   attackRange: 3
-  attackRate: 0.55
+  attackRate: 0.8
   attackDamage: 30
   playerLayer:
     serializedVersion: 2

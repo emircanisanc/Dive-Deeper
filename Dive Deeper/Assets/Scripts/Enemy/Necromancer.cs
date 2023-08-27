@@ -66,7 +66,7 @@ public class Necromancer : MeleeEnemy
         nextThrowTime = Time.time + projectileThrowDuration;
         startLocalPos = projectileTrigger.transform.localPosition;
 
-        InGameUI.Instance.OpenBossHealthBar(bossName);
+        
     }
 
     public override void ApplyDamage(float damage)
@@ -124,6 +124,12 @@ public class Necromancer : MeleeEnemy
         throwSequence.Append(transform.DOScale(transform.localScale, 2.47f));
         throwSequence.Append(projectileTrigger.transform.DOLocalMove(startLocalPos, 0.5f).SetEase(Ease.Linear));
         throwSequence.OnComplete(() => StopThrowing());
+    }
+
+    public override void SetPlayer()
+    {
+        base.SetPlayer();
+        InGameUI.Instance.OpenBossHealthBar(bossName);
     }
 
     private void PlayClip(AudioClip clip)
