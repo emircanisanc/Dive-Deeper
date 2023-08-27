@@ -31,11 +31,13 @@ public class Necromancer : MeleeEnemy
     public int minSpawnCount = 1;
     public int maxSpawnCount = 3;
     float nextSpawnTime;
+    List<EnemyBaseAbstract> spawnedEnemies;
     Coroutine spawnCoroutine;
 
     protected override void Awake()
     {
         base.Awake();
+        spawnedEnemies = new List<EnemyBaseAbstract>();
         audioSource = GetComponent<AudioSource>();
         audioSource.playOnAwake = false;
         audioSource.loop = false;
@@ -155,7 +157,7 @@ public class Necromancer : MeleeEnemy
         {
             Vector3 spawnPos = transform.position + Random.insideUnitSphere * Random.Range(0.5f, 1.5f);
             GameObject enemyPrefab = skeletonPrefabs[Random.Range(0, skeletonPrefabs.Length)];
-            Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
+            spawnedEnemies.Add(Instantiate(enemyPrefab, spawnPos, Quaternion.identity).GetComponent<EnemyBaseAbstract>());
         }
         yield return new WaitForSeconds(1);
         StartMove();
@@ -171,6 +173,15 @@ public class Necromancer : MeleeEnemy
 
         if (throwSequence != null)
             throwSequence.Kill();
+
+
+        for (int i = 0; i < spawnedEnemies.Count; i++)
+        {
+            if (spawnedEnemies[i] != null)
+            {
+                spawnedEnemies[i].ApplyDamage(1000);
+            }
+        }
         StopThrowing();
         Vector3 spawnPos = transform.position;
         spawnPos.y += spawnDeltaY;

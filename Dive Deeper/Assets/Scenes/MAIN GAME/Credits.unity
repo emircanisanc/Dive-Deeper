@@ -203,8 +203,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   creditsText: {fileID: 2044727433}
-  targetY: 500
-  duration: 20
+  targetY: 800
+  duration: 24
   activateAtEnd: {fileID: 3350112}
 --- !u!1 &479673876
 GameObject:
@@ -1086,8 +1086,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "CREATOR: Emircan \u0131Sanc & Yakup EkINCI\n\nLEVEL DESIGNER: NURI ONACAK\n\nMUSIC:
-    DORUK SEZGIN SERT\n\nVOCALIZATION: BATUHAN KARA\n\n\n\nSPECIAL THANKS\n\nMert
-    Uzakgoren\nBERKE AYDIN\nBatuhan Ipek\nHILMI GUNER\nOMER YIRMIBES"
+    DORUK SEZGIN SERT\n\nVOCALIZATION: BATUHAN KARA\n\n\n\nSPECIAL THANKS\n\nMERT
+    UZAKGOREN\nBERKE AYDIN\nBATUHAN IPEK\nHILMI GUNER\nOMER YIRMIBES\nERAY SKYWALKER"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
