@@ -392,6 +392,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1766449281}
     m_Modifications:
+    - target: {fileID: 3901127902007495454, guid: f9e0fb6cab4ba5e4abdf86049866277c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300054, guid: 1eaee135ce037439d925cee5e41ce026,
+        type: 3}
     - target: {fileID: 6749792620434435272, guid: f9e0fb6cab4ba5e4abdf86049866277c,
         type: 3}
       propertyPath: m_Pivot.x
@@ -4324,8 +4330,8 @@ MonoBehaviour:
     dialogSound: {fileID: 8300000, guid: 03fb946b2b14d4a478d3d95f6b0b9519, type: 3}
     duration: 3
   - talkerImage: {fileID: 21300000, guid: 72a086c4cdbbf8c43a120a211106873c, type: 3}
-    dialogText: What do you mean.. You can't  remember anything. Oh my God... Anyway,
-      now listen to me carefully...
+    dialogText: What do you mean.. You can't (hiccups)  remember anything. Oh my
+      God... Anyway, now listen to me carefully...
     dialogSound: {fileID: 8300000, guid: e31584b0b4d649045b4d18fc4140563c, type: 3}
     duration: 10
   - talkerImage: {fileID: 21300000, guid: 93d3c96d494aac64bbc603e4fca92bd3, type: 3}
@@ -7894,7 +7900,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The Game Name
+  m_text: DREAM DIVER
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
