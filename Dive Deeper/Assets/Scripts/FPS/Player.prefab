@@ -340,8 +340,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerBody: {fileID: 2555592145897762151}
   mouseSensitivity: 250
-  yRotationSpeed: 0.01
-  xCameraSpeed: 0.01
+  yRotationSpeed: 0.005
+  xCameraSpeed: 0.005
 --- !u!1 &2555592145897762168
 GameObject:
   m_ObjectHideFlags: 0

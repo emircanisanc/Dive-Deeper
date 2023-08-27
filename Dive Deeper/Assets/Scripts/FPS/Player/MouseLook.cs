@@ -4,11 +4,11 @@ using UnityEngine;
 public class MouseLook : Singleton<MouseLook>
 {
     [SerializeField] private Transform playerBody;
-    [SerializeField][Range(100, 300)] private float mouseSensitivity = 250f;
+    [SerializeField][Range(1, 300)] private float mouseSensitivity = 50f;
     public float Sensitivity
     {
-        get { return (mouseSensitivity - 100) / (300 - 100); }
-        set { mouseSensitivity = Mathf.Lerp(100, 300, value); }
+        get { return (mouseSensitivity - 1) / (300 - 1); }
+        set { mouseSensitivity = Mathf.Lerp(1, 300, value); }
     }
 
     public float WantedCameraXRotation { get; set; }

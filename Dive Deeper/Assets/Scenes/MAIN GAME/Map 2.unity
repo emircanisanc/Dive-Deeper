@@ -37114,7 +37114,7 @@ MonoBehaviour:
   - {fileID: 1247161164}
   - {fileID: 2125294223}
   - {fileID: 1372141888}
-  totalTime: 90
+  totalTime: 60
   maxEnemyAlive: 10
 --- !u!23 &1653749106
 MeshRenderer:
